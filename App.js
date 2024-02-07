@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
-import { MontserratAlternates_600SemiBold } from '@expo-google-fonts/montserrat-alternates'
+import { MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates'
 import { Quicksand_500Medium } from '@expo-google-fonts/quicksand'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -15,7 +15,9 @@ const App = () => {
   let [fontsLoaded, fontError] = useFonts({
     MontserratAlternates_600SemiBold,
     Montserrat_700Bold,
-    Quicksand_500Medium
+    Quicksand_500Medium,
+    MontserratAlternates_500Medium,
+    MontserratAlternates_700Bold
 
   });
 

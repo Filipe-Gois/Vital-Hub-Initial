@@ -1,4 +1,4 @@
-import { InputText } from "./style"
+import { InputStyle } from "./style"
 
 export const Input = ({
 
@@ -12,7 +12,15 @@ export const Input = ({
 
 }) => {
     return (
-        <InputText />
+        <InputStyle
+            placeholder={placeholder}
+            fieldValue={fieldValue}
+            onChangeText={onChangeText}
+            keyType={keyType}
+            maxLength={maxLength}
+            onEndEditing={onEndEditing}
+
+        />
 
     )
 }

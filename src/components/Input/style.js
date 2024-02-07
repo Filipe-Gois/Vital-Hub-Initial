@@ -1,23 +1,13 @@
 import styled from "styled-components"
 import { Theme } from "../../themes"
 
-// export const InputStyle = styled.TextInput`
-// width: 90%;
-// height: 55px;
-// border-radius: 5px;
-// border: 1px solid ${Theme.colors.whiteColor};
-// font-size: 16px;
-// padding: 16px;
-
-
-// `
 export const InputStyle = styled.TextInput.attrs({
-    placeholderTextColor: '#34898f'
+    placeholderTextColor: '#49B3BA'
 })`
 width: 90%;
 height: 55px;
 border-radius: 5px;
-border: 1px solid ${Theme.colors.whiteColor};
+border: 1px solid ${Theme.colors.primary};
 font-size: 16px;
 padding: 16px;
 
