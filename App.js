@@ -7,6 +7,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { Navegacao } from './src/screens/Navegacao/Navegacao';
 import LoginScreen from './src/screens/LoginScreen/LoginScreen';
+import RecoverPasswordScreen from './src/screens/RecoverPasswordScreen/RecoverPasswordScreen';
+import CheckEmailSreen from './src/screens/CheckEmailSreen/CheckEmailSreen';
 
 const App = () => {
 
@@ -56,6 +58,19 @@ const App = () => {
           name='Login'
           component={LoginScreen}
           options={{ title: "Login" }}
+        />
+
+        <Stack.Screen
+
+          name='RecoverPassword'
+          component={RecoverPasswordScreen}
+          options={{ title: "Recover Password" }}
+        />
+
+        <Stack.Screen
+          name='CheckEmail'
+          component={CheckEmailSreen}
+          options={{ title: "Check your Email" }}
         />
 
 

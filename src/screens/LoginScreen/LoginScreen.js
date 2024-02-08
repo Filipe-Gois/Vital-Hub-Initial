@@ -1,5 +1,4 @@
-import { Linking, Text } from "react-native";
-import { Container, ContentComponents } from "../../components/Container/style";
+import { Container, InputBox, FormBox, ButtonBox, CreateAccountBox, MainContent } from "../../components/Container/style";
 // import LogoVitalHub from "../../assets/logo.svg"
 import { LogoComponent } from "../../components/Logo";
 import { Title } from "../../components/Title/style";
@@ -11,8 +10,11 @@ import { ButtonTitle, ButtonTitleGoogle } from "../../components/ButtonTitle/sty
 
 import { FontAwesome6 } from '@expo/vector-icons';
 import { Theme } from "../../themes";
-import { ContentAccount } from "./style.js"
-import { TextAccount } from "../Accountästyle.js"
+
+
+
+import { TextCreateAccount1, TextCreateAccount2 } from "../../components/Paragraph/style.js";
+
 
 
 
@@ -21,52 +23,71 @@ import { TextAccount } from "../Accountästyle.js"
 const LoginScreen = () => {
     return (
         <Container>
-            <LogoComponent source={require('../../assets/logo--green.png')} />
+            <MainContent>
 
-            <Title>Entrar ou criar conta</Title>
-
-            <ContentComponents>
-
-                <Input placeholder={'Email:'} />
-                <Input placeholder={'Senha:'} />
-            </ContentComponents>
+                <LogoComponent />
 
 
+                <FormBox>
 
-            <LinkMedium>Esqueceu sua senha?</LinkMedium>
+                    <Title>Entrar ou criar conta</Title>
 
+                    <InputBox>
 
-            {/* <ContentComponents> */}
-            <Button>
-
-                <ButtonTitle>
-                    Entrar
-                </ButtonTitle>
-
-            </Button>
-            {/* </ContentComponents> */}
+                        <Input placeholder={'Email:'} />
+                        <Input placeholder={'Senha:'} />
+                    </InputBox>
 
 
-
-            <ButtonGoogle>
-
-                <FontAwesome6 name="google" size={16} color={Theme.colors.secondary} />
+                    <LinkMedium>Esqueceu sua senha?</LinkMedium>
 
 
-                <ButtonTitleGoogle>
-                    Entrar com Google
-                </ButtonTitleGoogle>
+                    <ButtonBox>
 
-            </ButtonGoogle>
+                        <Button>
+
+                            <ButtonTitle>
+                                Entrar
+                            </ButtonTitle>
+
+                        </Button>
 
 
 
-            <ContentAccount>
-                <TextAccount>
-                    Não tem conta ? Crie uma agora!
-                </TextAccount>
-            </ContentAccount>
 
+                        <ButtonGoogle>
+
+                            <FontAwesome6 name="google" size={16} color={Theme.colors.secondary} />
+
+                            {/* ícone sendo importado diretamente da biblioteca do expo */}
+
+
+                            <ButtonTitleGoogle>
+                                Entrar com Google
+                            </ButtonTitleGoogle>
+
+                        </ButtonGoogle>
+
+                    </ButtonBox>
+
+
+                </FormBox>
+
+
+
+                <CreateAccountBox>
+
+                    <TextCreateAccount1>
+                        Não tem conta ? {""}
+                    </TextCreateAccount1>
+
+                    <TextCreateAccount2>
+                        Crie uma conta agora!
+
+                    </TextCreateAccount2>
+
+                </CreateAccountBox>
+            </MainContent>
 
         </Container>
     );
