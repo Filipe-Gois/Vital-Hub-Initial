@@ -1,10 +1,15 @@
 import { AntDesign } from '@expo/vector-icons';
+import { LeftArrowStyle } from './style';
+import { GreenCircleComponent } from '../GreenCircle';
 
-// export const LeftArrow = ({ size = 24, color = "black" }) => {
 
-//     return <AntDesign name="arrowleft" size={size} color={color} />
-// }
+export const LeftArrowComponent = ({ size = 24, color = "black" }) => {
 
-// export const LeftArrowBack = () => {
-//     return 
-// }
+    return (
+        // <GreenCircleComponent>
+        //     <LeftArrowStyle source={require('../../assets/leftarrowback.svg')} />
+        // </GreenCircleComponent>
+
+        <LeftArrowStyle source={require('../../assets/leftarrowback.svg')} />
+    )
+}

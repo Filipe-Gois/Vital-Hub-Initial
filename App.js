@@ -9,6 +9,8 @@ import { Navegacao } from './src/screens/Navegacao/Navegacao';
 import LoginScreen from './src/screens/LoginScreen/LoginScreen';
 import RecoverPasswordScreen from './src/screens/RecoverPasswordScreen/RecoverPasswordScreen';
 import CheckEmailSreen from './src/screens/CheckEmailSreen/CheckEmailSreen';
+import RedefinePasswordScreen from './src/screens/RedefinePasswordScreen/RedefinePassword';
+import CreateAccountScreen from './src/screens/CreateAccountScreen/CreateAccountScreen';
 
 const App = () => {
 
@@ -71,6 +73,18 @@ const App = () => {
           name='CheckEmail'
           component={CheckEmailSreen}
           options={{ title: "Check your Email" }}
+        />
+
+        <Stack.Screen
+          name='RedefinePassword'
+          component={RedefinePasswordScreen}
+          options={{ title: "Redefine your password" }}
+        />
+
+        <Stack.Screen
+          name='CreateAccount'
+          component={CreateAccountScreen}
+          options={{ title: "Create Account" }}
         />
 
 

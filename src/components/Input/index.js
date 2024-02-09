@@ -7,12 +7,15 @@ export const Input = ({
     onChangeText,
     keyType,
     maxLength,
-    onEndEditing
+    onEndEditing,
+    fieldWidth = 100,
 
 
 }) => {
     return (
         <InputStyle
+            fieldWidth={fieldWidth}
+
             placeholder={placeholder}
             fieldValue={fieldValue}
             onChangeText={onChangeText}

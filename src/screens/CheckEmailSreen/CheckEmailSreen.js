@@ -1,11 +1,12 @@
 import { useState } from "react"
 import { Container, ContainerText, FormBox, InputBoxCheckEmail, MainContent } from "../../components/Container/style"
 import { LogoComponent } from "../../components/Logo"
-import { Paragraph, UserEmailText } from "../../components/Paragraph/style"
+import { Paragraph, TextCreateAccount2, UserEmailText } from "../../components/Paragraph/style"
 import { Title } from "../../components/Title/style"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button/style"
 import { ButtonTitle } from "../../components/ButtonTitle/style"
+import { CloseXComponent } from "../../components/CloseX"
 
 const CheckEmailSreen = () => {
 
@@ -20,7 +21,7 @@ const CheckEmailSreen = () => {
     return (
         <Container>
             <MainContent>
-
+                <CloseXComponent />
                 <LogoComponent />
 
                 <FormBox>
@@ -34,10 +35,10 @@ const CheckEmailSreen = () => {
 
 
                     <InputBoxCheckEmail>
-                        <Input fieldValue={user.number1} />
-                        <Input fieldValue={user.number2} />
-                        <Input fieldValue={user.number3} />
-                        <Input fieldValue={user.number4} />
+                        <Input fieldWidth={18} maxLength={1} keyType={"numeric"} fieldValue={user.number1} />
+                        <Input fieldWidth={18} maxLength={1} keyType={"numeric"} fieldValue={user.number2} />
+                        <Input fieldWidth={18} maxLength={1} keyType={"numeric"} fieldValue={user.number3} />
+                        <Input fieldWidth={18} maxLength={1} keyType={"numeric"} fieldValue={user.number4} />
                     </InputBoxCheckEmail>
 
                     <Button>
@@ -47,6 +48,10 @@ const CheckEmailSreen = () => {
                         </ButtonTitle>
 
                     </Button>
+
+                    <TextCreateAccount2>
+                        Reenviar Código
+                    </TextCreateAccount2>
 
 
                 </FormBox>

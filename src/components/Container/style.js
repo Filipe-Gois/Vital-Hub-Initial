@@ -9,28 +9,31 @@ background-color: ${Theme.colors.whiteColor};
 export const MainContent = styled(Container)`
 flex: 0 1 auto;
 width: 100%;
-height: 90%;
+height: 100%;
 /* margin-top: 30px; */
 `
 
 export const ContainerText = styled(MainContent)`
-height:100%;
+height: max-content;
+
 `
 
 
 
 export const FormBox = styled.View`
 width: 90%;
-max-height: max-content;
+max-height: 100%;
 align-items: center;
 gap: 20px;
 `
+
 export const InputBox = styled(FormBox)`
 width: 100%;
 `
 
 export const InputBoxCheckEmail = styled(InputBox)`
 flex-direction: row;
+justify-content: space-between;
 
 `
 export const ButtonBox = styled(FormBox)`

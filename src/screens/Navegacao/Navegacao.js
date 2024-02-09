@@ -6,7 +6,8 @@ export const Navegacao = ({ navigation }) => {
             <Button title="Login" onPress={() => navigation.navigate("Login")} />
             <Button title="Recover Password" onPress={() => navigation.navigate("RecoverPassword")} />
             <Button title="Check Email" onPress={() => navigation.navigate("CheckEmail")} />
+            <Button title="Redefine your Password" onPress={() => navigation.navigate("RedefinePassword")} />
+            <Button title="Create Account" onPress={() => navigation.navigate("CreateAccount")} />
         </View>
     )
 }
-

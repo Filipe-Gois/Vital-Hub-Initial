@@ -10,6 +10,7 @@ export const Theme = {
         greenColor: '#3CBD6A',
         blueColor: '#1058F1 ',
         whiteColor: '#fff',
+        lightGreen: '#E0F0F1',
 
     }
 }
