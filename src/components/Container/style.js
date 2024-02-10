@@ -4,18 +4,22 @@ import { Theme } from "../../themes";
 export const Container = styled.SafeAreaView`
 flex: 1;
 align-items: center;
-background-color: ${Theme.colors.whiteColor};
+background-color: ${Theme.colors.lightWhite};
 `
+
+export const MainContentScroll = styled.ScrollView`
+width: 100%;
+`
+
 export const MainContent = styled(Container)`
 flex: 0 1 auto;
 width: 100%;
-height: 100%;
-/* margin-top: 30px; */
+margin: 0 0 30px 0;
 `
+
 
 export const ContainerText = styled(MainContent)`
 height: max-content;
-
 `
 
 

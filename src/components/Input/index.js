@@ -9,12 +9,14 @@ export const Input = ({
     maxLength,
     onEndEditing,
     fieldWidth = 100,
+    fieldHeight = 55,
 
 
 }) => {
     return (
         <InputStyle
             fieldWidth={fieldWidth}
+            fieldHeight={fieldHeight}
 
             placeholder={placeholder}
             fieldValue={fieldValue}

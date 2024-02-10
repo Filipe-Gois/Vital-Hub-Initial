@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 import { MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates'
-import { Quicksand_500Medium } from '@expo-google-fonts/quicksand'
+import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { Navegacao } from './src/screens/Navegacao/Navegacao';
@@ -11,17 +11,19 @@ import RecoverPasswordScreen from './src/screens/RecoverPasswordScreen/RecoverPa
 import CheckEmailSreen from './src/screens/CheckEmailSreen/CheckEmailSreen';
 import RedefinePasswordScreen from './src/screens/RedefinePasswordScreen/RedefinePassword';
 import CreateAccountScreen from './src/screens/CreateAccountScreen/CreateAccountScreen';
+import MedicalRecordScreen from './src/screens/MedicalRecordScreen/MedicalRecordScreen';
 
 const App = () => {
 
   const Stack = createNativeStackNavigator()
 
   let [fontsLoaded, fontError] = useFonts({
-    MontserratAlternates_600SemiBold,
-    Montserrat_700Bold,
-    Quicksand_500Medium,
     MontserratAlternates_500Medium,
-    MontserratAlternates_700Bold
+    MontserratAlternates_600SemiBold,
+    MontserratAlternates_700Bold,
+    Quicksand_500Medium,
+    Quicksand_600SemiBold,
+    Montserrat_700Bold,
 
   });
 
@@ -85,6 +87,12 @@ const App = () => {
           name='CreateAccount'
           component={CreateAccountScreen}
           options={{ title: "Create Account" }}
+        />
+
+        <Stack.Screen
+          name='MedicalRecord'
+          component={MedicalRecordScreen}
+          options={{ title: "Medical Record" }}
         />
 
 

@@ -6,7 +6,8 @@ import { Title } from "../../components/Title/style"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button/style"
 import { ButtonTitle } from "../../components/ButtonTitle/style"
-import { CloseXComponent } from "../../components/CloseX"
+import { LeftArrowAOrXComponent } from "../../components/LeftArrowAOrX"
+
 
 const CheckEmailSreen = () => {
 
@@ -21,7 +22,7 @@ const CheckEmailSreen = () => {
     return (
         <Container>
             <MainContent>
-                <CloseXComponent />
+               <LeftArrowAOrXComponent isLefArrow={false}/>
                 <LogoComponent />
 
                 <FormBox>

@@ -18,6 +18,14 @@ font-family: 'Quicksand_500Medium';
 font-size: 16px;
 `
 
+export const ParagraphSemiBold = styled(Paragraph)`
+font-family: 'Quicksand_600SemiBold';
+text-align: left;
+width: 100%;
+
+
+`
+
 export const UserEmailText = styled(Paragraph)`
 color: ${Theme.colors.secondary};
 `

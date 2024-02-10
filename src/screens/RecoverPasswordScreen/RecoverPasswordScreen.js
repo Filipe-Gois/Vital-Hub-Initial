@@ -6,7 +6,7 @@ import { Paragraph } from "../../components/Paragraph/style"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button/style"
 import { ButtonTitle } from "../../components/ButtonTitle/style"
-import { LeftArrowComponent } from "../../components/Arrow"
+import { LeftArrowAOrXComponent } from "../../components/LeftArrowAOrX"
 
 const RecoverPasswordScreen = () => {
 
@@ -16,7 +16,7 @@ const RecoverPasswordScreen = () => {
 
             <MainContent>
 
-                <LeftArrowComponent />
+                <LeftArrowAOrXComponent />
 
                 <LogoComponent />
 
