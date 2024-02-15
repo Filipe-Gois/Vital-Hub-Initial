@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const LabelStyle = styled.View`
-width: 100%;
-height: max-content;
-gap: 10px;
-`
+  width: ${(props) => (props.widthLabel ? props.widthLabel : "100%")};
+  max-width: ${(props) => (props.maxWidthLabel ? props.maxWidthLabel : "100%")};
+  height: max-content;
+  display: flex;
+  gap: 10px;
+`;

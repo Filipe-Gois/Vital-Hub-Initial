@@ -1,31 +1,31 @@
-import { InputStyle } from "./style"
+import { InputStyle } from "./style";
 
 export const Input = ({
-
-    placeholder,
-    fieldValue,
-    onChangeText,
-    keyType,
-    maxLength,
-    onEndEditing,
-    fieldWidth = 100,
-    fieldHeight = 55,
-
-
+  placeholder,
+  fieldValue,
+  onChangeText,
+  keyType,
+  maxLength,
+  onEndEditing,
+  fieldWidth = 100,
+  fieldMaxWidth = 100,
+  fieldHeight = 55,
+  backGround = "",
+  border = "",
 }) => {
-    return (
-        <InputStyle
-            fieldWidth={fieldWidth}
-            fieldHeight={fieldHeight}
-
-            placeholder={placeholder}
-            fieldValue={fieldValue}
-            onChangeText={onChangeText}
-            keyType={keyType}
-            maxLength={maxLength}
-            onEndEditing={onEndEditing}
-
-        />
-
-    )
-}
+  return (
+    <InputStyle
+      fieldWidth={fieldWidth}
+      fieldMaxWidth={fieldMaxWidth}
+      fieldHeight={fieldHeight}
+      placeholder={placeholder}
+      fieldValue={fieldValue}
+      onChangeText={onChangeText}
+      keyType={keyType}
+      maxLength={maxLength}
+      onEndEditing={onEndEditing}
+      border={border}
+      backGround={backGround}
+    />
+  );
+};
