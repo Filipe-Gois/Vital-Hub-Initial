@@ -6,6 +6,11 @@ export const TextCreateAccount1 = styled.Text`
   font-family: "MontserratAlternates_600SemiBold";
   font-size: 16px;
 `;
+export const ParagraphMA500 = styled.Text`
+  color: ${(props) => (!props.color ? Theme.colors.grayV2 : props.color)};
+  font-family: "MontserratAlternates_500Medium";
+  font-size: 12px;
+`;
 
 export const TextCreateAccount2 = styled(TextCreateAccount1)`
   text-decoration: underline;
@@ -13,10 +18,14 @@ export const TextCreateAccount2 = styled(TextCreateAccount1)`
 `;
 
 export const Paragraph = styled(TextCreateAccount1)`
-  text-align: ${props => !props.textAlign ? "center" : props.textAlign};
-  color: ${Theme.colors.grayV3};
+  text-align: ${(props) => (!props.textAlign ? "center" : props.textAlign)};
+  color: ${(props) =>
+    !props.colorText ? Theme.colors.grayV3 : props.colorText};
   font-family: "Quicksand_500Medium";
-  font-size: 16px;
+  font-size: 14px;
+`;
+export const ParagraphRegular = styled(Paragraph)`
+  font-family: "Quicksand_400Regular";
 `;
 
 export const ParagraphSemiBold = styled(Paragraph)`

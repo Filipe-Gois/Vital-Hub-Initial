@@ -7,10 +7,10 @@ import { Theme } from "../../themes";
 export const WelCome = () => {
   return (
     <WelComeStyle>
-      <WelComeImage src={ImageUser} alt="Foto do usuário." />
+      <WelComeImage widthImage="32%" heigthImage="100%" src={ImageUser} alt="Foto do usuário." />
 
       <WelComeTextBox>
-        <Paragraph textAlign={"start"}>Bem-Vindo</Paragraph>
+        <Paragraph textAlign={"left"}>Bem-Vindo</Paragraph>
         <TextCreateAccount1 color={Theme.colors.lightWhite}>Richard Kosta</TextCreateAccount1>
       </WelComeTextBox>
     </WelComeStyle>

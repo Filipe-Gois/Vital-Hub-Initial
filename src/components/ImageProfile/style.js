@@ -8,7 +8,7 @@ import styled from "styled-components";
 // `
 
 export const WelComeImageStyle = styled.Image`
-  width: 32%;
-  height: 100%;
+  width: ${(props) => (props.widthImage ? props.widthImage : "32%")};
+  height: ${(props) => (props.heigthImage ? props.heigthImage : "100%")};
   border-radius: 5px;
 `;

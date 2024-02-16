@@ -14,11 +14,13 @@ export const ContainerBoxStyle = styled.View`
   align-items: ${(props) => props.fieldAlignItems};
   width: 100%;
   height: max-content;
-  gap: 10px;
+  margin: ${(props) => (props.fieldMargin ? props.fieldMargin : "0")};
+  gap: ${(props) => (props.fieldGap ? props.fieldGap : "0")};
 `;
 
 export const MainContentScroll = styled.ScrollView`
   width: 100%;
+  background-color: ${Theme.colors.lightWhite};
 `;
 
 export const MainContent = styled.View`
@@ -27,6 +29,7 @@ export const MainContent = styled.View`
   height: 100%;
   margin: 0 0 30px 0;
   align-items: center;
+  background-color: ${Theme.colors.lightWhite};
 `;
 
 export const ContainerText = styled(MainContent)`

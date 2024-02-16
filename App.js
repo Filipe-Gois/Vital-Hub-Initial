@@ -2,11 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { useFonts, Montserrat_700Bold } from "@expo-google-fonts/montserrat";
 import {
-  MontserratAlternates_600SemiBold,
   MontserratAlternates_500Medium,
+  MontserratAlternates_600SemiBold,
   MontserratAlternates_700Bold,
 } from "@expo-google-fonts/montserrat-alternates";
 import {
+  Quicksand_400Regular,
   Quicksand_500Medium,
   Quicksand_600SemiBold,
 } from "@expo-google-fonts/quicksand";
@@ -29,6 +30,7 @@ const App = () => {
     MontserratAlternates_500Medium,
     MontserratAlternates_600SemiBold,
     MontserratAlternates_700Bold,
+    Quicksand_400Regular,
     Quicksand_500Medium,
     Quicksand_600SemiBold,
     Montserrat_700Bold,
