@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { Theme } from "../../themes";
 
 export const TextCreateAccount1 = styled.Text`
-  color: ${Theme.colors.grayV2};
+  color: ${(props) => (!props.color ? Theme.colors.grayV2 : props.color)};
   font-family: "MontserratAlternates_600SemiBold";
+  font-size: 16px;
 `;
 
 export const TextCreateAccount2 = styled(TextCreateAccount1)`
@@ -12,7 +13,7 @@ export const TextCreateAccount2 = styled(TextCreateAccount1)`
 `;
 
 export const Paragraph = styled(TextCreateAccount1)`
-  text-align: center;
+  text-align: ${props => !props.textAlign ? "center" : props.textAlign};
   color: ${Theme.colors.grayV3};
   font-family: "Quicksand_500Medium";
   font-size: 16px;

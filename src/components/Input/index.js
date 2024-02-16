@@ -12,6 +12,7 @@ export const Input = ({
   fieldHeight = 55,
   backGround = "",
   border = "",
+  placeholderTextColor,
 }) => {
   return (
     <InputStyle
@@ -26,6 +27,7 @@ export const Input = ({
       onEndEditing={onEndEditing}
       border={border}
       backGround={backGround}
+      placeholderTextColor={placeholderTextColor}
     />
   );
 };

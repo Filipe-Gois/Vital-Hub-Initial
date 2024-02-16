@@ -8,9 +8,11 @@ import { Header } from "../../components/Header";
 export const ConsultasScreen = () => {
   return (
     <Container>
-      {/* <Header /> */}
+      <Header />
       <MainContentScroll>
-        <MainContent></MainContent>
+        <MainContent>
+          
+        </MainContent>
       </MainContentScroll>
     </Container>
   );

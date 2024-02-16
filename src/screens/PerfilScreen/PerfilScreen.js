@@ -28,6 +28,7 @@ export const PerfilScreen = () => {
 
           <FormBox>
             <Label
+              placeholderTextColor={Theme.colors.grayV1}
               titulo="Data de nascimento:"
               placeholder={"04/05/1999"}
               border="none"
@@ -35,6 +36,7 @@ export const PerfilScreen = () => {
             />
 
             <Label
+              placeholderTextColor={Theme.colors.grayV1}
               titulo="CPF"
               placeholder={"859********"}
               border="none"
@@ -42,6 +44,7 @@ export const PerfilScreen = () => {
             />
 
             <Label
+              placeholderTextColor={Theme.colors.grayV1}
               titulo="Endereço"
               placeholder={"Rua Vicenso Silva, 987"}
               border="none"
@@ -53,6 +56,7 @@ export const PerfilScreen = () => {
               fieldJustifyContent="space-between"
             >
               <Label
+                placeholderTextColor={Theme.colors.grayV1}
                 widthLabel={"45%"}
                 fieldWidth={"100"}
                 fieldMaxWidth={100}
@@ -63,6 +67,7 @@ export const PerfilScreen = () => {
               />
 
               <Label
+                placeholderTextColor={Theme.colors.grayV1}
                 widthLabel={"45%"}
                 fieldWidth={"100"}
                 fieldMaxWidth={100}

@@ -17,12 +17,14 @@ const Label = ({
   fieldMaxWidth = 100,
   widthLabel,
   maxWidthLabel,
+  placeholderTextColor,
 }) => {
   return (
     <LabelStyle widthLabel={widthLabel} maxWidthLabel={maxWidthLabel}>
       <ParagraphSemiBold>{titulo}</ParagraphSemiBold>
 
       <Input
+        placeholderTextColor={placeholderTextColor}
         placeholder={placeholder}
         fieldValue={fieldValue}
         onChangeText={onChangeText}

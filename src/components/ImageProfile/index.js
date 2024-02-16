@@ -1,7 +1,5 @@
-// import { ImageProfileStyle } from "./style"
+import { WelComeImageStyle } from "./style";
 
-// export const ImageProfileComponent = ({ src = "" }) => {
-//     return (
-//         <ImageProfileStyle source={require('../../assets/UserProfileImage.jpg')} />
-//     )
-// }
+export const WelComeImage = ({ src = "", alt = "" }) => {
+  return <WelComeImageStyle source={src} alt={alt} />;
+};
