@@ -52,7 +52,16 @@ export const InputBoxCheckEmail = styled(InputBox)`
   justify-content: space-between;
 `;
 export const ButtonBox = styled(FormBox)`
-  width: 100%;
+  width: ${(props) => (props.fieldWidth ? props.fieldWidth : "100%")};
+
+  justify-content: ${(props) =>
+    props.fieldJustifyContent ? props.fieldJustifyContent : "start"};
+
+  align-items: ${(props) =>
+    props.fieldAlignItems ? props.fieldAlignItems : "stretch"};
+
+  flex-direction: ${(props) =>
+    props.fieldFlexDirection ? props.fieldFlexDirection : "column"};
 `;
 
 export const CreateAccountBox = styled.View`

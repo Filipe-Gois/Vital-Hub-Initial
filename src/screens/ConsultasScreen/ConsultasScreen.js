@@ -6,7 +6,7 @@ import {
   MainContentScroll,
 } from "../../components/Container/style";
 import { Header } from "../../components/Header";
-import Doctor from "../../assets/doctor.png"
+import Doctor from "../../assets/doctor.png";
 
 export const ConsultasScreen = () => {
   return (
@@ -20,7 +20,7 @@ export const ConsultasScreen = () => {
             fieldGap={"15px"}
             fieldMargin={"20px 0 0 0"}
           >
-            <CardConsulta srcImage={Doctor}/>
+            <CardConsulta srcImage={Doctor} />
             <CardConsulta />
           </ContainerBoxStyle>
         </MainContent>

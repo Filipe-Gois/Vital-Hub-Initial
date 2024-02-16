@@ -22,6 +22,7 @@ import CreateAccountScreen from "./src/screens/CreateAccountScreen/CreateAccount
 import MedicalRecordScreen from "./src/screens/MedicalRecordScreen/MedicalRecordScreen";
 import { PerfilScreen } from "./src/screens/PerfilScreen/PerfilScreen";
 import { ConsultasScreen } from "./src/screens/ConsultasScreen/ConsultasScreen";
+import HomeScreen from "./src/screens/HomeScreen";
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -98,9 +99,9 @@ const App = () => {
         />
 
         <Stack.Screen
-          name="Consultas"
-          component={ConsultasScreen}
-          options={{ title: "Consultas" }}
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Home" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
