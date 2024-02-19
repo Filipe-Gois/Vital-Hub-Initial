@@ -10,13 +10,18 @@ import { Header } from "../../components/Header";
 import User from "../../assets/UserProfileImageWelcome.png";
 import { CalendarList } from "../../components/Calendar";
 import {
+  ButtonTextStyle,
   ButtonTitle,
   ButtonTitleHome,
 } from "../../components/ButtonTitle/style";
 import { Button } from "../../components/Button/style";
 import { Theme } from "../../themes";
+import { useState } from "react";
+import { ButtonListAppontment } from "../../components/Button";
+import MenuBar from "../../components/Menu";
 
 const HomeScreen = () => {
+  const [statusLista, setStatusLista] = useState("Pendente");
   return (
     <Container>
       <Header />
@@ -31,29 +36,32 @@ const HomeScreen = () => {
             fieldJustifyContent={"space-between"}
             fieldWidth={"90%"}
           >
-            <Button padding="0" fieldWidth={"30%"}>
-              <ButtonTitleHome fontSize={"12px"}>Agendadas</ButtonTitleHome>
-            </Button>
-
-            <Button
-              padding="0"
-              backGround={Theme.colors.lightWhite}
-              fieldWidth={"30%"}
+            <ButtonListAppontment
+              clickButton={statusLista === "Pendente"}
+              onPress={() => setStatusLista("Pendente")}
             >
-              <ButtonTitleHome color={Theme.colors.secondary} fontSize={"12px"}>
+              <ButtonTextStyle clickButton={statusLista === "Pendente"}>
+                Pendentes
+              </ButtonTextStyle>
+            </ButtonListAppontment>
+
+            <ButtonListAppontment
+              clickButton={statusLista === "Realizada"}
+              onPress={() => setStatusLista("Realizada")}
+            >
+              <ButtonTextStyle clickButton={statusLista === "Realizada"}>
                 Realizadas
-              </ButtonTitleHome>
-            </Button>
+              </ButtonTextStyle>
+            </ButtonListAppontment>
 
-            <Button
-              padding="0"
-              backGround={Theme.colors.lightWhite}
-              fieldWidth={"30%"}
+            <ButtonListAppontment
+              clickButton={statusLista === "Cancelada"}
+              onPress={() => setStatusLista("Cancelada")}
             >
-              <ButtonTitleHome color={Theme.colors.secondary} fontSize={"12px"}>
+              <ButtonTextStyle clickButton={statusLista === "Cancelada"}>
                 Canceladas
-              </ButtonTitleHome>
-            </Button>
+              </ButtonTextStyle>
+            </ButtonListAppontment>
           </ButtonBox>
 
           {/* Caixa com os cards */}
@@ -75,6 +83,8 @@ const HomeScreen = () => {
           </ContainerBoxStyle>
         </MainContent>
       </MainContentScroll>
+
+      <MenuBar />
     </Container>
   );
 };
