@@ -20,5 +20,6 @@ export const Theme = {
     lightAqua: "#E8FCFD",
     darkBlue: "#4C75BC",
     red: "#C81D25",
+    grayBlue: "#344F8F",
   },
 };

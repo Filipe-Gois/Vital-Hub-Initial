@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { Theme } from "../../themes";
 
 export const CardConsultaStyle = styled.View`
-  width: 90%;
+  width: 100%;
   height: 102px;
   padding: 10px 20px 10px 10px;
   background-color: ${Theme.colors.whiteColor};
   flex-direction: row;
-  /* margin-top: 20px; */
+  margin-top: 20px;
   justify-content: space-between;
-
+  border-radius: 5px;
   box-shadow: 0 4px 4px #000;
 
   /* box-shadow para android */
@@ -17,7 +17,7 @@ export const CardConsultaStyle = styled.View`
   shadow-opacity: 0.25;
   shadow-offset: 0px 4px;
   shadow-radius: 4px;
-  elevation: 5;
+  elevation: 10;
 `;
 
 export const InfoTextBox = styled.View`
@@ -58,7 +58,9 @@ export const HourBox = styled.View`
   width: 100px;
   height: 25px;
   background-color: ${(props) =>
-    props.near ? Theme.colors.lightAqua : Theme.colors.v3LightWhite};
+    props.statusLista === "Pendente"
+      ? Theme.colors.lightAqua
+      : props.statusLista === "Cancelada" && Theme.colors.v3LightWhite};
   border-radius: 5px;
   display: flex;
   flex-direction: row;

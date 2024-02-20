@@ -19,9 +19,96 @@ import { Theme } from "../../themes";
 import { useState } from "react";
 import { ButtonListAppontment } from "../../components/Button";
 import MenuBar from "../../components/Menu";
+import { FlatList, Text } from "react-native";
+import Nicole from "../../assets/nicole-sarga.png";
+import { FlatListStyle } from "../../components/FlatList/style";
 
 const HomeScreen = () => {
   const [statusLista, setStatusLista] = useState("Pendente");
+  const [dadosPaciente, setDadosPaciente] = useState([
+    {
+      id: "1",
+      name: "Niccole Sarga",
+      type: "Rotina",
+      age: "22",
+      horario: "14:00",
+      srcImage: Nicole,
+      statusLista: "Pendente",
+    },
+    {
+      id: "2",
+      name: "Richard Kosta",
+      type: "Urgência",
+      age: "28",
+      horario: "15:00",
+      srcImage: User,
+      statusLista: "Cancelada",
+    },
+    {
+      id: "3",
+      name: "Niccole Sarga",
+      type: "Rotina",
+      age: "22",
+      horario: "14:00",
+      srcImage: Nicole,
+      statusLista: "Pendente",
+    },
+    {
+      id: "4",
+      name: "Richard Kosta",
+      type: "Urgência",
+      age: "28",
+      horario: "15:00",
+      srcImage: User,
+      statusLista: "Cancelada",
+    },
+    {
+      id: "5",
+      name: "Niccole Sarga",
+      type: "Rotina",
+      age: "22",
+      horario: "14:00",
+      srcImage: Nicole,
+      statusLista: "Pendente",
+    },
+    {
+      id: "6",
+      name: "Richard Kosta",
+      type: "Urgência",
+      age: "28",
+      horario: "15:00",
+      srcImage: User,
+      statusLista: "Cancelada",
+    },
+    {
+      id: "7",
+      name: "Niccole Sarga",
+      type: "Rotina",
+      age: "22",
+      horario: "14:00",
+      srcImage: Nicole,
+      statusLista: "Pendente",
+    },
+    {
+      id: "8",
+      name: "Richard Kosta",
+      type: "Urgência",
+      age: "28",
+      horario: "15:00",
+      srcImage: User,
+      statusLista: "Cancelada",
+    },
+    {
+      id: "9",
+      name: "Richard Kosta",
+      type: "Urgência",
+      age: "28",
+      horario: "15:00",
+      srcImage: User,
+      statusLista: "Realizada",
+    },
+  ]);
+
   return (
     <Container>
       <Header />
@@ -65,26 +152,22 @@ const HomeScreen = () => {
           </ButtonBox>
 
           {/* Caixa com os cards */}
-          <ContainerBoxStyle
-            fieldAlignItems="center"
-            fieldGap={"15px"}
-            fieldMargin={"20px 0 0 0"}
-          >
-            <CardConsulta />
-
-            <CardConsulta
-              horario={"15:00"}
-              type="Urgência"
-              srcImage={User}
-              name={"Richard Kosta"}
-              age={"28 anos"}
-              near={false}
+          <ContainerBoxStyle fieldAlignItems="center" fieldGap={"15px"}>
+            <FlatListStyle
+              data={dadosPaciente}
+              scrollEnabled={false}
+              renderItem={({ item }) =>
+                statusLista === item.statusLista && (
+                  <CardConsulta dados={item} statusLista={item.statusLista} />
+                )
+              }
+              keyExtractor={(item) => item.id}
             />
           </ContainerBoxStyle>
         </MainContent>
       </MainContentScroll>
 
-      <MenuBar />
+      {/* <MenuBar /> */}
     </Container>
   );
 };

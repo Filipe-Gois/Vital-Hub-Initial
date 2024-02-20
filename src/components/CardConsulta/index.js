@@ -7,7 +7,6 @@ import {
   InfoTextBox,
   Point,
 } from "./style";
-import Nicole from "../../assets/nicole-sarga.png";
 import {
   ParagraphMA500,
   ParagraphRegular,
@@ -16,28 +15,32 @@ import {
 } from "../Paragraph/style";
 import { Theme } from "../../themes";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import Nicole from "../../assets/nicole-sarga.png";
 
-export const CardConsulta = ({
-  name = "Niccole Sarga",
-  type = "Rotina",
-  age = "22 anos",
-  horario = "14:00",
-  srcImage = Nicole,
-  near = true,
-}) => {
+export const CardConsulta = ({ dados = [], statusLista }) => {
   return (
     <CardConsultaStyle>
-      <WelComeImage widthImage="26%" heigthImage="100%" src={srcImage} />
+      <WelComeImage widthImage="26%" heigthImage="100%" src={dados.srcImage} />
 
       <InfoTextBox>
-        <TextCreateAccount1>{name}</TextCreateAccount1>
+        <TextCreateAccount1>{dados.name}</TextCreateAccount1>
 
-        <AgeAndType type={type} age={age} />
-        <Hour near={near} horario={horario} />
+        <AgeAndType type={dados.type} age={dados.age} />
+        <Hour statusLista={dados.statusLista} horario={dados.horario} />
       </InfoTextBox>
 
       <CancelBox>
-        <ParagraphMA500 color={Theme.colors.red}>Cancelar</ParagraphMA500>
+        <ParagraphMA500
+          color={
+            dados.statusLista === "Pendente"
+              ? Theme.colors.red
+              : Theme.colors.grayBlue
+          }
+        >
+          {dados.statusLista === "Pendente"
+            ? "Cancelar"
+            : dados.statusLista === "Realizada" && "Ver prontuário"}
+        </ParagraphMA500>
       </CancelBox>
     </CardConsultaStyle>
   );
@@ -46,7 +49,7 @@ export const CardConsulta = ({
 const AgeAndType = ({ type = "", age = "" }) => {
   return (
     <AgeAndTypeBox>
-      <ParagraphRegular>{age}</ParagraphRegular>
+      <ParagraphRegular>{age} anos</ParagraphRegular>
 
       <Point />
 
@@ -55,17 +58,25 @@ const AgeAndType = ({ type = "", age = "" }) => {
   );
 };
 
-const Hour = ({ horario = "", near = true }) => {
+const Hour = ({ horario = "", statusLista = "" }) => {
   return (
-    <HourBox near={near}>
+    <HourBox statusLista={statusLista}>
       <MaterialCommunityIcons
         name="clock"
         size={14}
-        color={near ? Theme.colors.primary : Theme.colors.grayV4}
+        color={
+          statusLista === "Pendente"
+            ? Theme.colors.primary
+            : Theme.colors.grayV1
+        }
       />
 
       <ParagraphSemiBold
-        colorText={near ? Theme.colors.primary : Theme.colors.grayV4}
+        colorText={
+          statusLista === "Pendente"
+            ? Theme.colors.primary
+            : Theme.colors.grayV1
+        }
       >
         {horario}
       </ParagraphSemiBold>
