@@ -22,6 +22,8 @@ import MenuBar from "../../components/Menu";
 import { FlatList, Text } from "react-native";
 import Nicole from "../../assets/nicole-sarga.png";
 import { FlatListStyle } from "../../components/FlatList/style";
+import { CancelattionModal } from "../../components/CancelattionModal/CancelattionModal";
+import { ModalComponent } from "../../components/Modal";
 
 const HomeScreen = () => {
   const [statusLista, setStatusLista] = useState("Pendente");
@@ -33,7 +35,7 @@ const HomeScreen = () => {
       age: "22",
       horario: "14:00",
       srcImage: Nicole,
-      statusLista: "Pendente",
+      situacao: "Pendente",
     },
     {
       id: "2",
@@ -42,7 +44,7 @@ const HomeScreen = () => {
       age: "28",
       horario: "15:00",
       srcImage: User,
-      statusLista: "Cancelada",
+      situacao: "Cancelada",
     },
     {
       id: "3",
@@ -51,7 +53,7 @@ const HomeScreen = () => {
       age: "22",
       horario: "14:00",
       srcImage: Nicole,
-      statusLista: "Pendente",
+      situacao: "Pendente",
     },
     {
       id: "4",
@@ -60,7 +62,7 @@ const HomeScreen = () => {
       age: "28",
       horario: "15:00",
       srcImage: User,
-      statusLista: "Cancelada",
+      situacao: "Cancelada",
     },
     {
       id: "5",
@@ -69,7 +71,7 @@ const HomeScreen = () => {
       age: "22",
       horario: "14:00",
       srcImage: Nicole,
-      statusLista: "Pendente",
+      situacao: "Pendente",
     },
     {
       id: "6",
@@ -78,7 +80,7 @@ const HomeScreen = () => {
       age: "28",
       horario: "15:00",
       srcImage: User,
-      statusLista: "Cancelada",
+      situacao: "Cancelada",
     },
     {
       id: "7",
@@ -87,7 +89,7 @@ const HomeScreen = () => {
       age: "22",
       horario: "14:00",
       srcImage: Nicole,
-      statusLista: "Pendente",
+      situacao: "Realizada",
     },
     {
       id: "8",
@@ -96,7 +98,7 @@ const HomeScreen = () => {
       age: "28",
       horario: "15:00",
       srcImage: User,
-      statusLista: "Cancelada",
+      situacao: "Cancelada",
     },
     {
       id: "9",
@@ -105,9 +107,13 @@ const HomeScreen = () => {
       age: "28",
       horario: "15:00",
       srcImage: User,
-      statusLista: "Realizada",
+      situacao: "Pendente",
     },
   ]);
+
+  //state para a exibição dos modais
+  const [showModalCancel, setShowModalCancel] = useState(false);
+  const [showModalAppointment, setShowModalAppointment] = useState(false);
 
   return (
     <Container>
@@ -157,12 +163,49 @@ const HomeScreen = () => {
               data={dadosPaciente}
               scrollEnabled={false}
               renderItem={({ item }) =>
-                statusLista === item.statusLista && (
-                  <CardConsulta dados={item} statusLista={item.statusLista} />
+                statusLista === item.situacao && (
+                  <CardConsulta
+                    onPressCancel={() => setShowModalCancel(true)}
+                    onPressAppointment={() => setShowModalAppointment(true)}
+                    dados={item}
+                    statusLista={item.situacao}
+                  />
                 )
               }
               keyExtractor={(item) => item.id}
             />
+
+            {/* modal cancelar */}
+
+            <ModalComponent
+              visible={showModalCancel}
+              setShowModalCancel={setShowModalCancel}
+              title={"Cancelar consulta"}
+              texto={
+                "Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?"
+              }
+              textButton1={"Confirmar"}
+              textButton2={"Cancelar"}
+            />
+
+            <ModalComponent
+              visible={showModalAppointment}
+              setShowModalCancel={setShowModalAppointment}
+              title={"Niccole Sarga"}
+              texto={
+                "22 anos      niccole.sarga@gmail.com"
+              }
+              textButton1={"Inserir Prontuário"}
+              textButton2={"Cancelar"}
+              cancel={false}
+            />
+
+            {/* <CancelattionModal
+              visible={showModalCancel}
+              setShowModalCancel={setShowModalCancel}
+            /> */}
+
+            {/* modal ver prontuário */}
           </ContainerBoxStyle>
         </MainContent>
       </MainContentScroll>

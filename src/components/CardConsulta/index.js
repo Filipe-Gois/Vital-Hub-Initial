@@ -16,8 +16,13 @@ import {
 import { Theme } from "../../themes";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Nicole from "../../assets/nicole-sarga.png";
+import { ButtonSecondary } from "../Button/style";
 
-export const CardConsulta = ({ dados = [], statusLista }) => {
+export const CardConsulta = ({
+  dados = [],
+  onPressCancel,
+  onPressAppointment,
+}) => {
   return (
     <CardConsultaStyle>
       <WelComeImage widthImage="26%" heigthImage="100%" src={dados.srcImage} />
@@ -26,21 +31,45 @@ export const CardConsulta = ({ dados = [], statusLista }) => {
         <TextCreateAccount1>{dados.name}</TextCreateAccount1>
 
         <AgeAndType type={dados.type} age={dados.age} />
-        <Hour statusLista={dados.statusLista} horario={dados.horario} />
+        <Hour situacao={dados.situacao} horario={dados.horario} />
       </InfoTextBox>
 
       <CancelBox>
-        <ParagraphMA500
-          color={
-            dados.statusLista === "Pendente"
-              ? Theme.colors.red
-              : Theme.colors.grayBlue
-          }
-        >
-          {dados.statusLista === "Pendente"
-            ? "Cancelar"
-            : dados.statusLista === "Realizada" && "Ver prontuário"}
-        </ParagraphMA500>
+        {dados.situacao === "Pendente" ? (
+          <ButtonSecondary padding={"0"} onPress={onPressCancel}>
+            <ParagraphMA500
+              color={
+                dados.situacao === "Pendente"
+                  ? Theme.colors.red
+                  : Theme.colors.grayBlue
+              }
+            >
+              Cancelar
+            </ParagraphMA500>
+          </ButtonSecondary>
+        ) : (
+          dados.situacao === "Realizada" && (
+            <ButtonSecondary padding={"0"} onPress={onPressAppointment}>
+              <ParagraphMA500 color={Theme.colors.grayBlue}>
+                Ver prontuário
+              </ParagraphMA500>
+            </ButtonSecondary>
+          )
+        )}
+
+        {/* <ButtonSecondary padding={"0"} onPress={onPressCancel}>
+          <ParagraphMA500
+            color={
+              dados.situacao === "Pendente"
+                ? Theme.colors.red
+                : Theme.colors.grayBlue
+            }
+          >
+            {dados.situacao === "Pendente"
+              ? "Cancelar"
+              : dados.situacao === "Realizada" && "Ver prontuário"}
+          </ParagraphMA500>
+        </ButtonSecondary> */}
       </CancelBox>
     </CardConsultaStyle>
   );
@@ -58,24 +87,20 @@ const AgeAndType = ({ type = "", age = "" }) => {
   );
 };
 
-const Hour = ({ horario = "", statusLista = "" }) => {
+const Hour = ({ horario = "", situacao = "" }) => {
   return (
-    <HourBox statusLista={statusLista}>
+    <HourBox situacao={situacao}>
       <MaterialCommunityIcons
         name="clock"
         size={14}
         color={
-          statusLista === "Pendente"
-            ? Theme.colors.primary
-            : Theme.colors.grayV1
+          situacao === "Pendente" ? Theme.colors.primary : Theme.colors.grayV1
         }
       />
 
       <ParagraphSemiBold
         colorText={
-          statusLista === "Pendente"
-            ? Theme.colors.primary
-            : Theme.colors.grayV1
+          situacao === "Pendente" ? Theme.colors.primary : Theme.colors.grayV1
         }
       >
         {horario}

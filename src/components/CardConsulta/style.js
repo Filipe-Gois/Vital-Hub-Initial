@@ -4,11 +4,12 @@ import { Theme } from "../../themes";
 export const CardConsultaStyle = styled.View`
   width: 100%;
   height: 102px;
-  padding: 10px 20px 10px 10px;
+  padding: 10px 30px 10px 10px;
   background-color: ${Theme.colors.whiteColor};
   flex-direction: row;
   margin-top: 20px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 5px;
   border-radius: 5px;
   box-shadow: 0 4px 4px #000;
 
@@ -21,10 +22,12 @@ export const CardConsultaStyle = styled.View`
 `;
 
 export const InfoTextBox = styled.View`
-  width: 50%;
+  /* border: 1px solid red; */
+  width: max-content;
   height: 100%;
   /* border: 2px solid red; */
   justify-content: space-between;
+  /* border: 1px solid red; */
 `;
 
 export const AgeAndTypeBox = styled(InfoTextBox)`
@@ -50,17 +53,18 @@ export const Point = styled.View`
 export const CancelBox = styled.View`
   width: max-content;
   height: 100%;
-
   justify-content: flex-end;
+  align-items: flex-end;
+  /* border: 1px solid red; */
 `;
 
 export const HourBox = styled.View`
   width: 100px;
   height: 25px;
   background-color: ${(props) =>
-    props.statusLista === "Pendente"
+    props.situacao === "Pendente"
       ? Theme.colors.lightAqua
-      : props.statusLista === "Cancelada" && Theme.colors.v3LightWhite};
+      : Theme.colors.v3LightWhite};
   border-radius: 5px;
   display: flex;
   flex-direction: row;

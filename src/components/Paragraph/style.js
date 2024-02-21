@@ -14,7 +14,7 @@ export const ParagraphMA500 = styled.Text`
 
 export const TextCreateAccount2 = styled(TextCreateAccount1)`
   text-decoration: underline;
-  color: ${Theme.colors.secondary};
+  color: ${Theme.colors.grayBlue};
 `;
 
 export const Paragraph = styled(TextCreateAccount1)`

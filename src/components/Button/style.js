@@ -28,7 +28,7 @@ export const ButtonTabStyle = styled.TouchableHighlight`
     props.padding ? props.padding : "12px 14px 12px 14px"};
   border-radius: 5px;
 
-  width: ${props => props.fieldWidth ? props.fieldWidth : "auto"};
+  width: ${(props) => (props.fieldWidth ? props.fieldWidth : "auto")};
 
   ${(props) =>
     props.clickButton
@@ -39,4 +39,11 @@ export const ButtonTabStyle = styled.TouchableHighlight`
           background-color: ${Theme.colors.lightWhite};
           border: ${Theme.colors.secondary};
         `}
+`;
+
+export const ButtonSecondary = styled(Button)`
+  background-color: transparent;
+  border: none;
+  width: max-content;
+  height: max-content;
 `;
