@@ -4,7 +4,7 @@ import { HeaderContentBox, HeaderStyle } from "./style";
 import { MaterialIcons } from "@expo/vector-icons";
 import { WelCome } from "../WelCome";
 
-export const Header = () => {
+export const Header = ({ src = "" }) => {
   return (
     <HeaderStyle>
       <LinearGradient
@@ -14,7 +14,7 @@ export const Header = () => {
         end={{ x: 1, y: 0 }} // Fim no canto inferior direito
       >
         <HeaderContentBox>
-          <WelCome />
+          <WelCome src={src} />
           <MaterialIcons name="notifications" size={25} color="white" />
         </HeaderContentBox>
       </LinearGradient>

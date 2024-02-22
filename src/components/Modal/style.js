@@ -36,3 +36,18 @@ export const ModalImage = styled.Image`
   height: 181px;
   border-radius: 10px;
 `;
+
+export const AgendarConsultaContent = styled(PatientModal)`
+  justify-content: flex-end;
+`;
+
+export const AgendarConsultaContentBox = styled(ModalContent)`
+  padding: 30px 30px 10px;
+  height: 60%;
+  border: 1px solid red;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background-color: ${Theme.colors.whiteColor};
+  align-items: center;
+  gap: 30px;
+`;

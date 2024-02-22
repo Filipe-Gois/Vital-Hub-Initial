@@ -47,3 +47,9 @@ export const ButtonSecondary = styled(Button)`
   width: max-content;
   height: max-content;
 `;
+
+export const ButtonBorderCyan = styled(Button)`
+  background-color: transparent;
+  border: 2px solid ${Theme.colors.primary};
+  padding: 9px 10px;
+`;

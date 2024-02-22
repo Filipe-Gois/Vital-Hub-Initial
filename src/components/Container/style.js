@@ -72,3 +72,13 @@ export const CreateAccountBox = styled.View`
   flex-direction: row;
   margin-top: 30px;
 `;
+
+export const FormBoxModal = styled(FormBox)`
+  padding: 30px 30px 10px;
+  height: 55%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  background-color: ${Theme.colors.whiteColor};
+  align-items: center;
+  gap: 30px;
+`;

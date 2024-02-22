@@ -31,6 +31,7 @@ export const ParagraphRegular = styled(Paragraph)`
 export const ParagraphSemiBold = styled(Paragraph)`
   font-family: "Quicksand_600SemiBold";
   text-align: left;
+  /* color: ${(props) => (props.color ? props.color : null)}; */
 `;
 
 export const UserEmailText = styled(Paragraph)`

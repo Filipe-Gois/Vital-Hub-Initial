@@ -1,4 +1,4 @@
-import { CardConsulta } from "../../components/CardConsulta";
+import React, { useState } from "react";
 import {
   ButtonBox,
   Container,
@@ -7,35 +7,29 @@ import {
   MainContentScroll,
 } from "../../components/Container/style";
 import { Header } from "../../components/Header";
-import User from "../../assets/UserProfileImageWelcome.png";
+import UserImage from "../../assets/UserProfileImageWelcome.png";
+import Doctor from "../../assets/doctor.png";
 import { CalendarList } from "../../components/Calendar";
-import {
-  ButtonTextStyle,
-  ButtonTitle,
-  ButtonTitleHome,
-} from "../../components/ButtonTitle/style";
-import { Button } from "../../components/Button/style";
-import { Theme } from "../../themes";
-import { useState } from "react";
 import { ButtonListAppontment } from "../../components/Button";
-import MenuBar from "../../components/Menu";
-import { FlatList, Text } from "react-native";
+import { ButtonTextStyle } from "../../components/ButtonTitle/style";
 import Nicole from "../../assets/nicole-sarga.png";
-import { FlatListStyle } from "../../components/FlatList/style";
-import { CancelattionModal } from "../../components/CancelattionModal/CancelattionModal";
+import User from "../../assets/UserProfileImageWelcome.png";
 import { ModalComponent } from "../../components/Modal";
-import Doctor from "../../assets/doctorFull.png";
+import { FlatListStyle } from "../../components/FlatList/style";
+import { CardConsulta } from "../../components/CardConsulta";
+import Stethoscope from "../../components/stethoscope";
 
-const HomeScreen = () => {
+const HomeUserScreen = () => {
   const [statusLista, setStatusLista] = useState("Pendente");
+  const [agendarConsulta, setAgendarConsulta] = useState(false);
   const [dadosPaciente, setDadosPaciente] = useState([
     {
       id: "1",
-      name: "Niccole Sarga",
+      name: "Dr. Claudio",
       type: "Rotina",
       age: "22",
       horario: "14:00",
-      srcImage: Nicole,
+      srcImage: Doctor,
       situacao: "Pendente",
     },
     {
@@ -115,14 +109,12 @@ const HomeScreen = () => {
   //state para a exibição dos modais
   const [showModalCancel, setShowModalCancel] = useState(false);
   const [showModalAppointment, setShowModalAppointment] = useState(false);
-
   return (
     <Container>
-      <Header src={Doctor} />
+      <Header src={UserImage} />
 
       <MainContentScroll>
         <MainContent>
-          {/* Calendário */}
           <CalendarList />
 
           <ButtonBox
@@ -158,7 +150,6 @@ const HomeScreen = () => {
             </ButtonListAppontment>
           </ButtonBox>
 
-          {/* Caixa com os cards */}
           <ContainerBoxStyle fieldAlignItems="center" fieldGap={"15px"}>
             <FlatListStyle
               data={dadosPaciente}
@@ -198,20 +189,16 @@ const HomeScreen = () => {
               textButton2={"Cancelar"}
               cancel={false}
             />
-
-            {/* <CancelattionModal
-              visible={showModalCancel}
-              setShowModalCancel={setShowModalCancel}
-            /> */}
-
-            {/* modal ver prontuário */}
           </ContainerBoxStyle>
         </MainContent>
       </MainContentScroll>
-
-      {/* <MenuBar /> */}
+      <Stethoscope
+        agendarConsulta={agendarConsulta}
+        onPressAgendar={() => setAgendarConsulta(true)}
+        setAgendarConsulta={() => setAgendarConsulta(false)}
+      />
     </Container>
   );
 };
 
-export default HomeScreen;
+export default HomeUserScreen;

@@ -3,10 +3,15 @@ import { Theme } from "../../themes";
 
 export const ButtonTitle = styled.Text`
   color: ${(props) =>
-    !props.buttonStatus ? Theme.colors.secondary : Theme.colors.whiteColor};
+    !props.buttonStatus ? Theme.colors.secondary : props.buttonStatus};
   font-size: ${(props) => (props.fontSize ? props.fontSize : "14px")};
   text-transform: uppercase;
   font-family: "MontserratAlternates_700Bold";
+`;
+
+export const ButtonTitleModal = styled.Text`
+  font-family: "MontserratAlternates_600SemiBold";
+  color: ${Theme.colors.primary};
 `;
 
 export const ButtonTitleGoogle = styled(ButtonTitle)`

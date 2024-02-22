@@ -7,11 +7,11 @@ export const WelComeImage = ({
   alt = "",
 }) => {
   return (
-    <WelComeImageStyle 
-    widthImage={widthImage} 
-    heigthImage={heigthImage} 
-    source={src} 
-    alt={alt} 
+    <WelComeImageStyle
+      widthImage={widthImage}
+      heigthImage={heigthImage}
+      source={src}
+      alt={alt}
     />
   );
 };

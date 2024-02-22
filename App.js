@@ -23,6 +23,7 @@ import MedicalRecordScreen from "./src/screens/MedicalRecordScreen/MedicalRecord
 import { PerfilScreen } from "./src/screens/PerfilScreen/PerfilScreen";
 import { ConsultasScreen } from "./src/screens/ConsultasScreen/ConsultasScreen";
 import HomeScreen from "./src/screens/HomeScreen";
+import HomeUserScreen from "./src/screens/HomeUserScreen/HomeUserScreen";
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -102,6 +103,11 @@ const App = () => {
           name="Home"
           component={HomeScreen}
           options={{ title: "Home" }}
+        />
+        <Stack.Screen
+          name="Home User"
+          component={HomeUserScreen}
+          options={{ title: "Home User" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -4,13 +4,13 @@ import Doctor from "../../assets/doctorFull.png";
 import { Paragraph, TextCreateAccount1 } from "../Paragraph/style";
 import { Theme } from "../../themes";
 
-export const WelCome = () => {
+export const WelCome = ({ src = "" }) => {
   return (
     <WelComeStyle>
       <WelComeImage
         widthImage="32%"
         heigthImage="100%"
-        src={Doctor}
+        src={src}
         alt="Foto do usuário."
       />
 
