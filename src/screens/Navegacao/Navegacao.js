@@ -38,6 +38,21 @@ export const Navegacao = ({ navigation }) => {
         title="Home User"
         onPress={() => navigation.navigate("Home User")}
       />
+
+      <Button
+        title="Select Clinic"
+        onPress={() => navigation.navigate("Select Clinic")}
+      />
+
+      <Button
+        title="Select Doctor"
+        onPress={() => navigation.navigate("Select Doctor")}
+      />
+
+      <Button
+        title="Select Date"
+        onPress={() => navigation.navigate("Select Date")}
+      />
     </View>
   );
 };

@@ -41,6 +41,7 @@ export const FormBox = styled.View`
   max-height: 100%;
   align-items: center;
   gap: 20px;
+  margin: ${(props) => (props.margin ? props.margin : "0")};
 `;
 
 export const InputBox = styled(FormBox)`

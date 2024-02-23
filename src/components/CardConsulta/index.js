@@ -87,19 +87,27 @@ const AgeAndType = ({ type = "", age = "" }) => {
   );
 };
 
-const Hour = ({ horario = "", situacao = "" }) => {
+export const Hour = ({ horario = "", situacao = "", isHour = true }) => {
   return (
     <HourBox situacao={situacao}>
-      <MaterialCommunityIcons
-        name="clock"
-        size={14}
-        color={
-          situacao === "Pendente" ? Theme.colors.primary : Theme.colors.grayV1
-        }
-      />
+      {isHour ? (
+        <MaterialCommunityIcons
+          name="clock"
+          size={14}
+          color={
+            situacao === "Pendente" ? Theme.colors.primary : Theme.colors.grayV1
+          }
+        />
+      ) : (
+        <MaterialCommunityIcons
+          name="calendar-today"
+          size={14}
+          color={Theme.colors.primary}
+        />
+      )}
 
       <ParagraphSemiBold
-        colorText={
+        color={
           situacao === "Pendente" ? Theme.colors.primary : Theme.colors.grayV1
         }
       >

@@ -1,0 +1,86 @@
+import React, { useState } from "react";
+import {
+  Container,
+  FormBox,
+  MainContent,
+  MainContentScroll,
+} from "../../components/Container/style";
+import { Title } from "../../components/Title/style";
+import { FlatListStyle } from "../../components/FlatList/style";
+import { Button, ButtonSecondary } from "../../components/Button/style";
+import { ButtonTitle } from "../../components/ButtonTitle/style";
+import { TextCreateAccount2 } from "../../components/Paragraph/style";
+import { Theme } from "../../themes";
+import DoctorAlessandra from "../../assets/doctorAlessandra.png";
+import DoctorKumushiro from "../../assets/doctorKumushiro.png";
+import DoctorRodrigo from "../../assets/doctorRodrigo.png";
+import DoctorCard from "../../components/DoctorCard";
+
+const SelectDoctorScreen = () => {
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const [doctors, setDoctors] = useState([
+    {
+      id: "1",
+      srcImage: DoctorAlessandra,
+      name: "Dra Alessandra",
+      specialty1: "Demartologa",
+      specialty2: "Esteticista",
+    },
+    {
+      id: "2",
+      srcImage: DoctorKumushiro,
+      name: "Dr Kumushiro",
+      specialty1: "Cirurgião",
+      specialty2: "Cardiologista",
+    },
+    {
+      id: "3",
+      srcImage: DoctorRodrigo,
+      name: "Dr Rodrigo Santos",
+      specialty1: "Clínico",
+      specialty2: "Pediatra",
+    },
+  ]);
+
+  const handleDoctorSelect = (doctorId) => {
+    setSelectedDoctor(doctorId);
+  };
+
+  return (
+    <Container>
+      <MainContentScroll>
+        <MainContent>
+          <FormBox margin={"30px 0 0 0"}>
+            <Title>Selecionar médico</Title>
+
+            <FlatListStyle
+              fieldWidth={"100%"}
+              data={doctors}
+              scrollEnabled={false}
+              renderItem={({ item }) => (
+                <DoctorCard
+                  isSelected={item.id === selectedDoctor}
+                  onSelect={() => handleDoctorSelect(item.id)}
+                  dados={item}
+                />
+              )}
+              keyExtractor={(item) => item.id}
+            />
+
+            <Button padding={"0"} buttonStatus>
+              <ButtonTitle buttonStatus={Theme.colors.whiteColor}>
+                Continuar
+              </ButtonTitle>
+            </Button>
+
+            <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+              <TextCreateAccount2>Cancelar</TextCreateAccount2>
+            </ButtonSecondary>
+          </FormBox>
+        </MainContent>
+      </MainContentScroll>
+    </Container>
+  );
+};
+
+export default SelectDoctorScreen;

@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Theme } from "../../themes";
 
 export const TextCreateAccount1 = styled.Text`
   color: ${(props) => (!props.color ? Theme.colors.grayV2 : props.color)};
   font-family: "MontserratAlternates_600SemiBold";
-  font-size: 16px;
+  font-size: ${(props) => (props.fontSize ? props.fontSize : "16px")};
 `;
 export const ParagraphMA500 = styled.Text`
   color: ${(props) => (!props.color ? Theme.colors.grayV2 : props.color)};
@@ -31,7 +31,13 @@ export const ParagraphRegular = styled(Paragraph)`
 export const ParagraphSemiBold = styled(Paragraph)`
   font-family: "Quicksand_600SemiBold";
   text-align: left;
-  /* color: ${(props) => (props.color ? props.color : null)}; */
+
+  ${(props) =>
+    props.color &&
+    css`
+      color: ${props.color};
+    `}/* color: ${(props) => props.color && props.color}; */
+  /* font-size: ${(props) => (props.fontSize ? props.fontSize : null)}; */
 `;
 
 export const UserEmailText = styled(Paragraph)`

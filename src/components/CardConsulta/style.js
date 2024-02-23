@@ -12,6 +12,7 @@ export const CardConsultaStyle = styled.View`
   gap: 5px;
   border-radius: 5px;
   box-shadow: 0 4px 4px #000;
+  
 
   /* box-shadow para android */
   shadow-color: "black";
