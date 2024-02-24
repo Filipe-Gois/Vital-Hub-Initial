@@ -34,3 +34,10 @@ export const InputCheckEmailStyle = styled(InputStyle)`
   font-size: 40px;
   padding: 5px 10px;
 `;
+
+export const InputSelectBox = styled.View`
+  width: 100%;
+  height: 55px;
+  border: 2px solid ${Theme.colors.primary};
+  border-radius: 5px;
+`;

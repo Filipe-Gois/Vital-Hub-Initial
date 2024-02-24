@@ -1,9 +1,10 @@
-import { InputCheckEmailStyle, InputStyle } from "./style";
+import { InputCheckEmailStyle, InputSelectBox, InputStyle } from "./style";
 import { StyleSheet, View } from "react-native";
-// import RNPickerSelect from "react-native-picker-select";
+import RNPickerSelect from "react-native-picker-select";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 // import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesome } from "@expo/vector-icons";
 
 export const Input = ({
   placeholder,
@@ -68,34 +69,35 @@ export const InputCheckEmail = ({
   );
 };
 
-// export const InputSelect = () => {
-//   return (
-//     <View style={{ width: 316 }}>
-//       <RNPickerSelect
-//         style={style}
-//         Icon={() => {
-//           return (
-//             <FontAwesomeIcon icon={faCaretDown} color="#34898F" size={22} />
-//           );
-//         }}
-//         placeholder={{
-//           label: "Selecione um valor",
-//           value: null,
-//           color: "#34898F",
-//         }}
-//         onValueChange={(value) => console.log(value)}
-//         items={[
-//           { label: "JavaScript", value: "JavaScript" },
-//           { label: "TypeScript", value: "TypeScript" },
-//           { label: "Python", value: "Python" },
-//           { label: "Java", value: "Java" },
-//           { label: "C++", value: "C++" },
-//           { label: "C", value: "C" },
-//         ]}
-//       />
-//     </View>
-//   );
-// };
+export const InputSelect = () => {
+  return (
+    <InputSelectBox>
+      <RNPickerSelect
+        style={style}
+        // Icon={() => {
+        // return (
+        // <FontAwesomeIcon icon={faCaretDown} color="#34898F" size={22} />
+        // <FontAwesome name="sort-down" size={22} color="#34898F" />
+        // );
+        // }}
+        placeholder={{
+          label: "Selecionar horário",
+          value: null,
+          color: "#34898F",
+        }}
+        // onValueChange={(value) => console.log(value)}
+        items={[
+          { label: "JavaScript", value: "JavaScript" },
+          { label: "TypeScript", value: "TypeScript" },
+          { label: "Python", value: "Python" },
+          { label: "Java", value: "Java" },
+          { label: "C++", value: "C++" },
+          { label: "C", value: "C" },
+        ]}
+      />
+    </InputSelectBox>
+  );
+};
 
 const style = StyleSheet.create({
   inputIOS: {
