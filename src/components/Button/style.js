@@ -5,7 +5,7 @@ export const Button = styled.TouchableOpacity`
   width: ${(props) => (props.fieldWidth ? props.fieldWidth : "100%")};
   height: ${(props) => (props.fieldHeight ? props.fieldHeight : "44px")};
   background-color: ${(props) =>
-    !props.buttonStatus ? Theme.colors.whiteColor : Theme.colors.secondary};
+    props.buttonStatus ? Theme.colors.whiteColor : Theme.colors.secondary};
   border: 1px solid ${Theme.colors.secondary};
   border-radius: 5px;
   /* margin-top: 15px; */

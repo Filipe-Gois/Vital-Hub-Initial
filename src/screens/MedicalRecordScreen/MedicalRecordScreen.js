@@ -6,7 +6,7 @@ import {
 } from "../../components/Container/style";
 import { BannerUserComponent } from "../../components/BannerUser";
 import UserImage from "../../assets/UserProfileImage.jpg";
-import { Button } from "../../components/Button/style";
+import { Button, ButtonSecondary } from "../../components/Button/style";
 import { ButtonTitle } from "../../components/ButtonTitle/style";
 import Label from "../../components/Label";
 import { TextCreateAccount2 } from "../../components/Paragraph/style";
@@ -43,7 +43,12 @@ const DoctorHomeScreen = () => {
               <ButtonTitle>Salvar</ButtonTitle>
             </Button>
 
-            <TextCreateAccount2>Cancelar</TextCreateAccount2>
+            <ButtonSecondary
+              padding={"0"}
+              onPress={() => setShowModalCancel(false)}
+            >
+              <TextCreateAccount2>Cancelar</TextCreateAccount2>
+            </ButtonSecondary>
           </FormBox>
         </MainContent>
       </MainContentScroll>

@@ -1,9 +1,9 @@
-import { InputStyle } from "./style";
-import RNPickerSelect from "react-native-picker-select";
+import { InputCheckEmailStyle, InputStyle } from "./style";
 import { StyleSheet, View } from "react-native";
+// import RNPickerSelect from "react-native-picker-select";
 
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+// import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 export const Input = ({
   placeholder,
@@ -36,35 +36,66 @@ export const Input = ({
     />
   );
 };
-
-export const InputSelect = () => {
+export const InputCheckEmail = ({
+  placeholder,
+  fieldValue,
+  onChangeText,
+  keyType,
+  maxLength,
+  onEndEditing,
+  fieldWidth = 100,
+  fieldMaxWidth = 100,
+  fieldHeight = 55,
+  backGround = "",
+  border = "",
+  placeholderTextColor,
+}) => {
   return (
-    <View style={{ width: 316 }}>
-      <RNPickerSelect
-        style={style}
-        Icon={() => {
-          return (
-            <FontAwesomeIcon icon={faCaretDown} color="#34898F" size={22} />
-          );
-        }}
-        placeholder={{
-          label: "Selecione um valor",
-          value: null,
-          color: "#34898F",
-        }}
-        onValueChange={(value) => console.log(value)}
-        items={[
-          { label: "JavaScript", value: "JavaScript" },
-          { label: "TypeScript", value: "TypeScript" },
-          { label: "Python", value: "Python" },
-          { label: "Java", value: "Java" },
-          { label: "C++", value: "C++" },
-          { label: "C", value: "C" },
-        ]}
-      />
-    </View>
+    <InputCheckEmailStyle
+      fieldWidth={fieldWidth}
+      fieldMaxWidth={fieldMaxWidth}
+      fieldHeight={fieldHeight}
+      placeholder={placeholder}
+      fieldValue={fieldValue}
+      onChangeText={onChangeText}
+      keyType={keyType}
+      maxLength={maxLength}
+      onEndEditing={onEndEditing}
+      border={border}
+      backGround={backGround}
+      placeholderTextColor={placeholderTextColor}
+    />
   );
 };
+
+// export const InputSelect = () => {
+//   return (
+//     <View style={{ width: 316 }}>
+//       <RNPickerSelect
+//         style={style}
+//         Icon={() => {
+//           return (
+//             <FontAwesomeIcon icon={faCaretDown} color="#34898F" size={22} />
+//           );
+//         }}
+//         placeholder={{
+//           label: "Selecione um valor",
+//           value: null,
+//           color: "#34898F",
+//         }}
+//         onValueChange={(value) => console.log(value)}
+//         items={[
+//           { label: "JavaScript", value: "JavaScript" },
+//           { label: "TypeScript", value: "TypeScript" },
+//           { label: "Python", value: "Python" },
+//           { label: "Java", value: "Java" },
+//           { label: "C++", value: "C++" },
+//           { label: "C", value: "C" },
+//         ]}
+//       />
+//     </View>
+//   );
+// };
 
 const style = StyleSheet.create({
   inputIOS: {

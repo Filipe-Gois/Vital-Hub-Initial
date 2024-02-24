@@ -21,8 +21,8 @@ export const CancelattionModal = ({ visible, setShowModalCancel, ...rest }) => {
             Ao cancelar essa consulta, abrirá uma possível disponibilidade no
             seu horário, deseja mesmo cancelar essa consulta?
           </Paragraph>
-          <Button padding={"0"} buttonStatus>
-            <ButtonTitle buttonStatus>Confirmar</ButtonTitle>
+          <Button padding={"0"} >
+            <ButtonTitle>Confirmar</ButtonTitle>
           </Button>
 
           <ButtonSecondary onPress={() => setShowModalCancel(false)}>

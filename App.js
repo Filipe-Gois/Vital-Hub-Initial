@@ -102,11 +102,7 @@ const App = () => {
           options={{ title: "Perfil" }}
         />
 
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ title: "Home" }}
-        />
+
         <Stack.Screen
           name="Home User"
           component={HomeUserScreen}

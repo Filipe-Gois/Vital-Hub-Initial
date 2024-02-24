@@ -77,10 +77,8 @@ const SelectClinicScreen = () => {
               keyExtractor={(item) => item.id}
             />
 
-            <Button padding={"0"} buttonStatus>
-              <ButtonTitle buttonStatus={Theme.colors.whiteColor}>
-                Continuar
-              </ButtonTitle>
+            <Button padding={"0"}>
+              <ButtonTitle>Continuar</ButtonTitle>
             </Button>
 
             <ButtonSecondary onPress={() => setShowModalCancel(false)}>

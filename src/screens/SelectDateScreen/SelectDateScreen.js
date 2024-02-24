@@ -10,7 +10,7 @@ import { ButtonTitle } from "../../components/ButtonTitle/style";
 import { TextCreateAccount2 } from "../../components/Paragraph/style";
 import { Theme } from "../../themes";
 import { Title } from "../../components/Title/style";
-// import CalendarMaximized from "../../components/CalendarMaximized";
+import CalendarMaximized from "../../components/CalendarMaximized";
 
 const SelectDateScreen = () => {
   return (
@@ -20,12 +20,10 @@ const SelectDateScreen = () => {
           <FormBox margin={"30px 0 0 0"}>
             <Title>Selecionar clínica</Title>
 
-            {/* <CalendarMaximized/> */}
+            <CalendarMaximized />
 
-            <Button padding={"0"} buttonStatus>
-              <ButtonTitle buttonStatus={Theme.colors.whiteColor}>
-                Continuar
-              </ButtonTitle>
+            <Button padding={"0"}>
+              <ButtonTitle>Continuar</ButtonTitle>
             </Button>
 
             <ButtonSecondary onPress={() => setShowModalCancel(false)}>

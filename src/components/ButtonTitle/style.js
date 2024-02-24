@@ -3,7 +3,7 @@ import { Theme } from "../../themes";
 
 export const ButtonTitle = styled.Text`
   color: ${(props) =>
-    !props.buttonStatus ? Theme.colors.secondary : props.buttonStatus};
+    props.buttonStatus ? props.buttonStatus : Theme.colors.whiteColor};
   font-size: ${(props) => (props.fontSize ? props.fontSize : "14px")};
   text-transform: uppercase;
   font-family: "MontserratAlternates_700Bold";

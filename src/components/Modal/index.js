@@ -46,8 +46,8 @@ export const ModalComponent = ({
           {!cancel && <ModalImage source={srcImage} />}
           <Title>{title}</Title>
           <Paragraph>{texto}</Paragraph>
-          <Button padding={"0"} buttonStatus>
-            <ButtonTitle buttonStatus>{textButton1}</ButtonTitle>
+          <Button padding={"0"}>
+            <ButtonTitle>{textButton1}</ButtonTitle>
           </Button>
 
           <ButtonSecondary onPress={() => setShowModalCancel(false)}>
@@ -79,49 +79,40 @@ export const ModalAgendarConsulta = ({
       {...rest}
     >
       <AgendarConsultaContent>
-        
-          <FormBoxModal>
-            <Title>{title}</Title>
+        <FormBoxModal>
+          <Title>{title}</Title>
 
-            <LabelStyle>
-              <ParagraphSemiBold>Qual o nível da consulta</ParagraphSemiBold>
+          <LabelStyle>
+            <ParagraphSemiBold>Qual o nível da consulta</ParagraphSemiBold>
 
-              <ButtonBox fieldFlexDirection={"row"}>
-                <ButtonBorderCyan fieldWidth={"30%"}>
-                  <ButtonTitleModal buttonStatus={Theme.colors.primary}>
-                    Rotina
-                  </ButtonTitleModal>
-                </ButtonBorderCyan>
+            <ButtonBox fieldFlexDirection={"row"}>
+              <ButtonBorderCyan fieldWidth={"30%"}>
+                <ButtonTitleModal>Rotina</ButtonTitleModal>
+              </ButtonBorderCyan>
 
-                <ButtonBorderCyan fieldWidth={"30%"}>
-                  <ButtonTitleModal buttonStatus={Theme.colors.primary}>
-                    Exame
-                  </ButtonTitleModal>
-                </ButtonBorderCyan>
+              <ButtonBorderCyan fieldWidth={"30%"}>
+                <ButtonTitleModal>Exame</ButtonTitleModal>
+              </ButtonBorderCyan>
 
-                <ButtonBorderCyan fieldWidth={"29%"}>
-                  <ButtonTitleModal buttonStatus={Theme.colors.primary}>
-                    Urgência
-                  </ButtonTitleModal>
-                </ButtonBorderCyan>
-              </ButtonBox>
-            </LabelStyle>
+              <ButtonBorderCyan fieldWidth={"29%"}>
+                <ButtonTitleModal>Urgência</ButtonTitleModal>
+              </ButtonBorderCyan>
+            </ButtonBox>
+          </LabelStyle>
 
-            <Label
-              titulo="Informe a localização desejada"
-              placeholder={"Informe a localização"}
-            />
+          <Label
+            titulo="Informe a localização desejada"
+            placeholder={"Informe a localização"}
+          />
 
-            <Button padding={"0"} buttonStatus>
-              <ButtonTitle buttonStatus={Theme.colors.whiteColor}>
-                {textButton1}
-              </ButtonTitle>
-            </Button>
+          <Button padding={"0"}>
+            <ButtonTitle>{textButton1}</ButtonTitle>
+          </Button>
 
-            <ButtonSecondary onPress={() => setShowModalCancel(false)}>
-              <TextCreateAccount2>{textButton2}</TextCreateAccount2>
-            </ButtonSecondary>
-          </FormBoxModal>
+          <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+            <TextCreateAccount2>{textButton2}</TextCreateAccount2>
+          </ButtonSecondary>
+        </FormBoxModal>
       </AgendarConsultaContent>
     </ModalStyle>
   );

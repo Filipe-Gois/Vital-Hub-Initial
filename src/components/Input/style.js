@@ -9,7 +9,7 @@ export const InputStyle = styled.TextInput.attrs((props) => ({
   width: ${(props) => ` ${props.fieldWidth}%`};
   max-width: ${(props) => ` ${props.fieldMaxWidth}%`};
   height: ${(props) => ` ${props.fieldHeight}px`};
-
+  color: ${Theme.colors.primary};
   border-radius: 5px;
   border: ${(props) =>
     props.border ? props.border : `2px solid ${Theme.colors.primary}`};
@@ -27,4 +27,10 @@ export const InputVerification = styled(InputStyle)`
 export const InputMedicalRecord = styled(InputStyle)`
   width: 100%;
   height: 121px;
+`;
+
+export const InputCheckEmailStyle = styled(InputStyle)`
+  text-align: center;
+  font-size: 40px;
+  padding: 5px 10px;
 `;

@@ -1,65 +1,94 @@
-import { useState } from "react"
-import { Container, ContainerText, FormBox, InputBoxCheckEmail, MainContent } from "../../components/Container/style"
-import { LogoComponent } from "../../components/Logo"
-import { Paragraph, TextCreateAccount2, UserEmailText } from "../../components/Paragraph/style"
-import { Title } from "../../components/Title/style"
-import { Input } from "../../components/Input"
-import { Button } from "../../components/Button/style"
-import { ButtonTitle } from "../../components/ButtonTitle/style"
-import { LeftArrowAOrXComponent } from "../../components/LeftArrowAOrX"
-
+import { useState } from "react";
+import {
+  Container,
+  ContainerText,
+  FormBox,
+  InputBoxCheckEmail,
+  MainContent,
+} from "../../components/Container/style";
+import { LogoComponent } from "../../components/Logo";
+import {
+  Paragraph,
+  TextCreateAccount2,
+  UserEmailText,
+} from "../../components/Paragraph/style";
+import { Title } from "../../components/Title/style";
+import { Input, InputCheckEmail } from "../../components/Input";
+import { Button, ButtonSecondary } from "../../components/Button/style";
+import { ButtonTitle } from "../../components/ButtonTitle/style";
+import { LeftArrowAOrXComponent } from "../../components/LeftArrowAOrX";
 
 const CheckEmailSreen = () => {
+  const [user, setUser] = useState({
+    userEmail: "username@email.com",
+    number1: 0,
+    number2: 0,
+    number3: 0,
+    number4: 0,
+  });
+  return (
+    <Container>
+      <MainContent>
+        <LeftArrowAOrXComponent isLefArrow={false} />
+        <LogoComponent />
 
+        <FormBox>
+          <Title>Verifique seu e-mail</Title>
 
-    const [user, setUser] = useState({
-        userEmail: "username@email.com",
-        number1: 0,
-        number2: 0,
-        number3: 0,
-        number4: 0,
-    })
-    return (
-        <Container>
-            <MainContent>
-               <LeftArrowAOrXComponent isLefArrow={false}/>
-                <LogoComponent />
+          <ContainerText>
+            <Paragraph>Digite o código de 4 dígitos enviado para </Paragraph>
+            <UserEmailText>{user.userEmail}</UserEmailText>
+          </ContainerText>
 
-                <FormBox>
-                    <Title>Verifique seu e-mail</Title>
+          <InputBoxCheckEmail>
+            <InputCheckEmail
+              placeholder={"0"}
+              fieldWidth={18}
+              fieldHeight={62}
+              maxLength={1}
+              keyType={"numeric"}
+              fieldValue={user.number1}
+            />
+            <InputCheckEmail
+              fieldHeight={62}
+              placeholder={"0"}
+              fieldWidth={18}
+              maxLength={1}
+              keyType={"numeric"}
+              fieldValue={user.number2}
+            />
+            <InputCheckEmail
+              fieldHeight={62}
+              placeholder={"0"}
+              fieldWidth={18}
+              maxLength={1}
+              keyType={"numeric"}
+              fieldValue={user.number3}
+            />
+            <InputCheckEmail
+              fieldHeight={62}
+              placeholder={"0"}
+              fieldWidth={18}
+              maxLength={1}
+              keyType={"numeric"}
+              fieldValue={user.number4}
+            />
+          </InputBoxCheckEmail>
 
+          <Button>
+            <ButtonTitle>ENTRAR</ButtonTitle>
+          </Button>
 
-                    <ContainerText>
-                        <Paragraph>Digite o código de 4 dígitos enviado para </Paragraph>
-                        <UserEmailText>{user.userEmail}</UserEmailText>
-                    </ContainerText>
+          <ButtonSecondary
+            padding={"0"}
+            onPress={() => setShowModalCancel(false)}
+          >
+            <TextCreateAccount2>Cancelar</TextCreateAccount2>
+          </ButtonSecondary>
+        </FormBox>
+      </MainContent>
+    </Container>
+  );
+};
 
-
-                    <InputBoxCheckEmail>
-                        <Input fieldWidth={18} maxLength={1} keyType={"numeric"} fieldValue={user.number1} />
-                        <Input fieldWidth={18} maxLength={1} keyType={"numeric"} fieldValue={user.number2} />
-                        <Input fieldWidth={18} maxLength={1} keyType={"numeric"} fieldValue={user.number3} />
-                        <Input fieldWidth={18} maxLength={1} keyType={"numeric"} fieldValue={user.number4} />
-                    </InputBoxCheckEmail>
-
-                    <Button>
-
-                        <ButtonTitle>
-                            ENTRAR
-                        </ButtonTitle>
-
-                    </Button>
-
-                    <TextCreateAccount2>
-                        Reenviar Código
-                    </TextCreateAccount2>
-
-
-                </FormBox>
-
-            </MainContent>
-        </Container>
-    )
-}
-
-export default CheckEmailSreen
+export default CheckEmailSreen;
