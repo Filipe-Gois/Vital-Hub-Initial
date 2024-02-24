@@ -85,7 +85,7 @@ export const InputSelect = () => {
           value: null,
           color: "#34898F",
         }}
-        // onValueChange={(value) => console.log(value)}
+        onValueChange={(value) => console.log(value)}
         items={[
           { label: "JavaScript", value: "JavaScript" },
           { label: "TypeScript", value: "TypeScript" },
