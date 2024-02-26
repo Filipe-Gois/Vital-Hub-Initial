@@ -19,6 +19,7 @@ export const Input = ({
   backGround = "",
   border = "",
   placeholderTextColor,
+  fieldPaddingBottom,
 }) => {
   return (
     <InputStyle
@@ -34,6 +35,7 @@ export const Input = ({
       border={border}
       backGround={backGround}
       placeholderTextColor={placeholderTextColor}
+      fieldPaddingBottom={fieldPaddingBottom}
     />
   );
 };

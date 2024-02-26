@@ -11,10 +11,15 @@ import { ButtonTitle, ButtonTitleModal } from "../ButtonTitle/style";
 import {
   AgendarConsultaContent,
   AgendarConsultaContentBox,
+  ConsultaInfoBoxStyle,
+  ConsultaInfoContent,
   ModalContent,
+  ModalContentAgendarConsulta,
   ModalImage,
   ModalStyle,
+  ModalTextBox,
   PatientModal,
+  TitleBox,
 } from "./style";
 import Nicole from "../../assets/nicole-sarga-modal.png";
 import Label from "../Label";
@@ -26,7 +31,8 @@ export const ModalComponent = ({
   visible,
   setShowModalCancel,
   title = "",
-  texto = "",
+  texto1 = "",
+  texto2 = "",
   textButton1 = "",
   textButton2 = "",
   cancel = true,
@@ -45,7 +51,12 @@ export const ModalComponent = ({
         <ModalContent>
           {!cancel && <ModalImage source={srcImage} />}
           <Title>{title}</Title>
-          <Paragraph>{texto}</Paragraph>
+
+          <ModalTextBox>
+            <Paragraph>{texto1}</Paragraph>
+            {!cancel && <Paragraph>{texto2}</Paragraph>}
+          </ModalTextBox>
+
           <Button padding={"0"}>
             <ButtonTitle>{textButton1}</ButtonTitle>
           </Button>
@@ -115,5 +126,84 @@ export const ModalAgendarConsulta = ({
         </FormBoxModal>
       </AgendarConsultaContent>
     </ModalStyle>
+  );
+};
+
+export const ModalConfirmarAgendamento = ({
+  visible,
+  setShowModalCancel,
+  title = "",
+  texto1 = "",
+  texto2 = "",
+  textButton1 = "",
+  textButton2 = "",
+  cancel = true,
+  srcImage = Nicole,
+  ...rest
+}) => {
+  return (
+    <ModalStyle
+      visible={visible}
+      transparent={true}
+      animationType="fade"
+      title=""
+      {...rest}
+    >
+      <PatientModal>
+        <ModalContentAgendarConsulta>
+          <TitleBox>
+            <Title>Agendar consulta</Title>
+
+            <Paragraph>
+              Consulte os dados selecionados para a sua consulta
+            </Paragraph>
+          </TitleBox>
+
+          <ConsultaInfoContent>
+            <ConsultaInfoBox
+              title="Data da consulta"
+              info="1 de Novembro de 2023"
+            />
+            <ConsultaInfoBox
+              title="Médico(a) da consulta"
+              info="Dra Alessandra"
+              doctor={true}
+              especialidade1="Demartologa"
+              especialidade2="Esteticista"
+            />
+            <ConsultaInfoBox title="Local da consulta" info="São Paulo, SP" />
+            <ConsultaInfoBox title="Tipo da consulta" info="Rotina" />
+          </ConsultaInfoContent>
+
+          <Button>
+            <ButtonTitle>Confirmar</ButtonTitle>
+          </Button>
+
+          <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+            <TextCreateAccount2>Cancelar</TextCreateAccount2>
+          </ButtonSecondary>
+        </ModalContentAgendarConsulta>
+      </PatientModal>
+    </ModalStyle>
+  );
+};
+
+const ConsultaInfoBox = ({
+  title = "",
+  info = "",
+  doctor = false,
+  especialidade1 = "",
+  especialidade2 = "",
+}) => {
+  return (
+    <ConsultaInfoBoxStyle>
+      <ParagraphSemiBold>{title}</ParagraphSemiBold>
+      <Paragraph textAlign={"left"}>{info}</Paragraph>
+      {doctor ? (
+        <Paragraph textAlign={"left"}>
+          {especialidade1}, {especialidade2}
+        </Paragraph>
+      ) : null}
+    </ConsultaInfoBoxStyle>
   );
 };

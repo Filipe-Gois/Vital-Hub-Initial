@@ -12,7 +12,6 @@ export const CardConsultaStyle = styled.View`
   gap: 5px;
   border-radius: 5px;
   box-shadow: 0 4px 4px #000;
-  
 
   /* box-shadow para android */
   shadow-color: "black";
@@ -23,21 +22,20 @@ export const CardConsultaStyle = styled.View`
 `;
 
 export const InfoTextBox = styled.View`
-  /* border: 1px solid red; */
+  margin-left: 10px;
   width: max-content;
   height: 100%;
   /* border: 2px solid red; */
   justify-content: space-between;
-  /* border: 1px solid red; */
 `;
 
 export const AgeAndTypeBox = styled(InfoTextBox)`
-  flex-direction: row;
   height: max-content;
   flex-direction: row;
   width: 100%;
   border: none;
   justify-content: flex-start;
+  margin-left: 0;
 `;
 
 export const Point = styled.View`
@@ -55,8 +53,10 @@ export const CancelBox = styled.View`
   width: max-content;
   height: 100%;
   justify-content: flex-end;
-  align-items: flex-end;
+  position: absolute;
   /* border: 1px solid red; */
+  right: 20px;
+  bottom: 15px;
 `;
 
 export const HourBox = styled.View`

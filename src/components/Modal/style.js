@@ -51,3 +51,33 @@ export const AgendarConsultaContentBox = styled(ModalContent)`
   align-items: center;
   gap: 30px;
 `;
+
+export const ModalTextBox = styled.View`
+  flex-direction: row;
+  gap: 20px;
+`;
+
+export const ModalContentAgendarConsulta = styled(ModalContent)`
+  /* height: 80%; */
+  padding: 30px 30px 15px;
+`;
+
+export const TitleBox = styled.View`
+  width: 100%;
+  height: max-content;
+  align-items: center;
+  gap: 16px;
+  /* border: 1px solid red; */
+`;
+
+export const ConsultaInfoContent = styled.View`
+  width: 100%;
+  /* border: 1px solid red; */
+  gap: 20px;
+`;
+
+export const ConsultaInfoBoxStyle = styled.View`
+  width: 100%;
+  /* border: 1px solid red; */
+  gap: 7px;
+`;

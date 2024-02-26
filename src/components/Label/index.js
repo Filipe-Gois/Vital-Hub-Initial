@@ -18,6 +18,7 @@ const Label = ({
   widthLabel,
   maxWidthLabel,
   placeholderTextColor,
+  fieldPaddingBottom,
 }) => {
   return (
     <LabelStyle widthLabel={widthLabel} maxWidthLabel={maxWidthLabel}>
@@ -36,6 +37,7 @@ const Label = ({
         border={border}
         backGround={backGround}
         fieldMaxWidth={fieldMaxWidth}
+        fieldPaddingBottom={fieldPaddingBottom}
       />
     </LabelStyle>
   );

@@ -173,7 +173,7 @@ const HomeUserScreen = () => {
               visible={showModalCancel}
               setShowModalCancel={setShowModalCancel}
               title={"Cancelar consulta"}
-              texto={
+              texto1={
                 "Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?"
               }
               textButton1={"Confirmar"}
@@ -184,7 +184,8 @@ const HomeUserScreen = () => {
               visible={showModalAppointment}
               setShowModalCancel={setShowModalAppointment}
               title={"Niccole Sarga"}
-              texto={"22 anos      niccole.sarga@gmail.com"}
+              texto1={"22 anos"}
+              texto2={"niccole.sarga@gmail.com"}
               textButton1={"Inserir Prontuário"}
               textButton2={"Cancelar"}
               cancel={false}

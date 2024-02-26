@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   FormBox,
@@ -16,8 +16,10 @@ import { Title } from "../../components/Title/style";
 import CalendarMaximized from "../../components/CalendarMaximized";
 import { InputSelect } from "../../components/Input";
 import { LabelStyle } from "../../components/Label/style";
+import { ModalConfirmarAgendamento } from "../../components/Modal";
 
 const SelectDateScreen = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <Container>
       <MainContentScroll>
@@ -35,16 +37,21 @@ const SelectDateScreen = () => {
               <InputSelect />
             </LabelStyle>
 
-            <Button padding={"0"}>
+            <Button onPress={() => setShowModal(true)} padding={"0"}>
               <ButtonTitle>Continuar</ButtonTitle>
             </Button>
 
-            <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+            <ButtonSecondary onPress={() => setShowModal(false)}>
               <TextCreateAccount2>Cancelar</TextCreateAccount2>
             </ButtonSecondary>
           </FormBox>
         </MainContent>
       </MainContentScroll>
+
+      <ModalConfirmarAgendamento
+        visible={showModal}
+        setShowModalCancel={setShowModal}
+      />
     </Container>
   );
 };

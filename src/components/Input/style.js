@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Theme } from "../../themes";
 
 export const InputStyle = styled.TextInput.attrs((props) => ({
@@ -17,6 +17,11 @@ export const InputStyle = styled.TextInput.attrs((props) => ({
     props.backGround ? props.backGround : Theme.colors.whiteColor};
   font-size: 16px;
   padding: 16px;
+  /* padding-bottom: ${(props) => (props.fieldPaddingBottom ? "80px" : "0px")}; */
+
+  /* padding-bottom: 80px; */
+
+  /* text-align: center; */
 `;
 
 export const InputVerification = styled(InputStyle)`
