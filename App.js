@@ -27,6 +27,7 @@ import HomeUserScreen from "./src/screens/HomeUserScreen/HomeUserScreen";
 import SelectClinicScreen from "./src/screens/SelectClinicScreen/SelectClinicScreen";
 import SelectDoctorScreen from "./src/screens/SelectDoctorScreen/SelectDoctorScreen";
 import SelectDateScreen from "./src/screens/SelectDateScreen/SelectDateScreen";
+import ViewMRScreen from "./src/screens/ViewMRScreen/ViewMRScreen";
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -102,7 +103,6 @@ const App = () => {
           options={{ title: "Perfil" }}
         />
 
-
         <Stack.Screen
           name="Home User"
           component={HomeUserScreen}
@@ -124,6 +124,12 @@ const App = () => {
           name="Select Date"
           component={SelectDateScreen}
           options={{ title: "Select Date" }}
+        />
+
+        <Stack.Screen
+          name="View Medical Record"
+          component={ViewMRScreen}
+          options={{ title: "View Medical Record" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

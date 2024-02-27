@@ -83,3 +83,8 @@ export const FormBoxModal = styled(FormBox)`
   align-items: center;
   gap: 30px;
 `;
+
+export const Line = styled.View`
+  width: 100%;
+  border: 1px solid ${Theme.colors.grayV4};
+`;

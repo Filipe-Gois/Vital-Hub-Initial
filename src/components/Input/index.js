@@ -20,14 +20,17 @@ export const Input = ({
   border = "",
   placeholderTextColor,
   fieldPaddingBottom,
+  textColor,
+  fieldTextAlign,
 }) => {
   return (
     <InputStyle
       fieldWidth={fieldWidth}
+      textColor={textColor}
       fieldMaxWidth={fieldMaxWidth}
       fieldHeight={fieldHeight}
       placeholder={placeholder}
-      fieldValue={fieldValue}
+      value={fieldValue}
       onChangeText={onChangeText}
       keyType={keyType}
       maxLength={maxLength}
@@ -36,6 +39,9 @@ export const Input = ({
       backGround={backGround}
       placeholderTextColor={placeholderTextColor}
       fieldPaddingBottom={fieldPaddingBottom}
+      fieldTextAlign={fieldTextAlign}
+      multiline={true}
+      numberOfLines={4}
     />
   );
 };

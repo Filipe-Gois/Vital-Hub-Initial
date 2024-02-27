@@ -44,7 +44,7 @@ export const ButtonTabStyle = styled.TouchableHighlight`
 export const ButtonSecondary = styled(Button)`
   background-color: transparent;
   border: none;
-  width: max-content;
+  width: ${(props) => (props.fieldWidth ? props.fieldWidth : "max-content")};
   height: max-content;
 `;
 
@@ -52,4 +52,14 @@ export const ButtonBorderCyan = styled(Button)`
   background-color: transparent;
   border: 2px solid ${Theme.colors.primary};
   padding: 9px 10px;
+`;
+
+export const ButtonAquaStyle = styled(Button)`
+  background-color: ${Theme.colors.primary};
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  width: 50%;
 `;

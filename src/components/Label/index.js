@@ -19,12 +19,16 @@ const Label = ({
   maxWidthLabel,
   placeholderTextColor,
   fieldPaddingBottom,
+  textColor,
+  fieldTextAlign,
+  isTitulo = true,
 }) => {
   return (
     <LabelStyle widthLabel={widthLabel} maxWidthLabel={maxWidthLabel}>
-      <ParagraphSemiBold>{titulo}</ParagraphSemiBold>
+      {isTitulo && <ParagraphSemiBold>{titulo}</ParagraphSemiBold>}
 
       <Input
+        textColor={textColor}
         placeholderTextColor={placeholderTextColor}
         placeholder={placeholder}
         fieldValue={fieldValue}
@@ -38,6 +42,7 @@ const Label = ({
         backGround={backGround}
         fieldMaxWidth={fieldMaxWidth}
         fieldPaddingBottom={fieldPaddingBottom}
+        fieldTextAlign={fieldTextAlign}
       />
     </LabelStyle>
   );

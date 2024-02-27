@@ -9,19 +9,27 @@ export const InputStyle = styled.TextInput.attrs((props) => ({
   width: ${(props) => ` ${props.fieldWidth}%`};
   max-width: ${(props) => ` ${props.fieldMaxWidth}%`};
   height: ${(props) => ` ${props.fieldHeight}px`};
-  color: ${Theme.colors.primary};
+  color: ${(props) =>
+    props.textColor ? props.textColor : Theme.colors.primary};
   border-radius: 5px;
   border: ${(props) =>
     props.border ? props.border : `2px solid ${Theme.colors.primary}`};
   background-color: ${(props) =>
     props.backGround ? props.backGround : Theme.colors.whiteColor};
-  font-size: 16px;
+  font-size: 14px;
   padding: 16px;
-  /* padding-bottom: ${(props) => (props.fieldPaddingBottom ? "80px" : "0px")}; */
+  /* text-align: justify; */
+  /* padding-bottom: ${(props) =>
+    props.fieldPaddingBottom ? "80px" : "0px"}; */
 
   /* padding-bottom: 80px; */
 
   /* text-align: center; */
+  ${(props) =>
+    props.fieldTextAlign &&
+    css`
+      text-align: ${props.fieldTextAlign};
+    `}
 `;
 
 export const InputVerification = styled(InputStyle)`
