@@ -56,6 +56,11 @@ export const Navegacao = ({ navigation }) => {
         title="View Medical Record"
         onPress={() => navigation.navigate("View Medical Record")}
       />
+
+      <Button
+        title="Clinic Address"
+        onPress={() => navigation.navigate("Clinic Address")}
+      />
     </View>
   );
 };

@@ -20,7 +20,7 @@ const RedefinePasswordScreen = () => {
                     <Title>Redefinir senha</Title>
                     <Paragraph>Insira e confirme a sua nova senha</Paragraph>
 
-                    <InputBox>
+                    <InputBox gap={"20px"}>
 
                         <Input placeholder={'Nova Senha'} />
                         <Input placeholder={'Confirmar nova senha'} />

@@ -39,7 +39,7 @@ const LoginScreen = () => {
         <FormBox>
           <Title>Entrar ou criar conta</Title>
 
-          <InputBox>
+          <InputBox gap={"20px"}>
             <Input placeholder={"Email:"} />
             <Input placeholder={"Senha:"} />
           </InputBox>

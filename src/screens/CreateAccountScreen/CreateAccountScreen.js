@@ -25,7 +25,7 @@ const CreateAccountScreen = () => {
             Insira seu endereço de e-mail e senha para realizar seu cadastro.
           </Paragraph>
 
-          <InputBox>
+          <InputBox gap={"20px"}>
             <Input placeholder={"Usuário ou E-mail"} />
             <Input placeholder={"Senha"} />
             <Input placeholder={"Confirmar Senha"} />

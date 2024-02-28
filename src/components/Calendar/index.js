@@ -5,7 +5,7 @@ import moment from "moment";
 import { StyledCalendarStrip } from "./style";
 
 const formatDate = (date) => {
-  return date.padStart(2, '0');
+  return date.padStart(2, "0");
 };
 
 export const CalendarList = () => {

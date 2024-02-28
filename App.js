@@ -28,6 +28,7 @@ import SelectClinicScreen from "./src/screens/SelectClinicScreen/SelectClinicScr
 import SelectDoctorScreen from "./src/screens/SelectDoctorScreen/SelectDoctorScreen";
 import SelectDateScreen from "./src/screens/SelectDateScreen/SelectDateScreen";
 import ViewMRScreen from "./src/screens/ViewMRScreen/ViewMRScreen";
+import ClinicAddressScreen from "./src/screens/ClinicAddressScreen/ClinicAddressScreen";
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -130,6 +131,12 @@ const App = () => {
           name="View Medical Record"
           component={ViewMRScreen}
           options={{ title: "View Medical Record" }}
+        />
+
+        <Stack.Screen
+          name="Clinic Address"
+          component={ClinicAddressScreen}
+          options={{ title: "Clinic Address" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

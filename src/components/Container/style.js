@@ -40,12 +40,21 @@ export const FormBox = styled.View`
   width: 90%;
   max-height: 100%;
   align-items: center;
-  gap: 20px;
+  gap: ${(props) => (props.gap ? props.gap : "20px")};
   margin: ${(props) => (props.margin ? props.margin : "0")};
+
 `;
 
 export const InputBox = styled(FormBox)`
   width: 100%;
+  align-items: center;
+  gap: ${(props) => (props.gap ? props.gap : "0px")};
+  margin: ${(props) => (props.margin ? props.margin : "0")};
+  flex-direction: ${(props) =>
+    props.fieldFlexDirection ? props.fieldFlexDirection : "column"};
+  justify-content: ${(props) =>
+    props.justifyContent ? props.justifyContent : "start"};
+  align-items: ${(props) => (props.alignItems ? props.alignItems : "stretch")};
 `;
 
 export const InputBoxCheckEmail = styled(InputBox)`
