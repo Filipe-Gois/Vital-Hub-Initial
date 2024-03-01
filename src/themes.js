@@ -8,6 +8,7 @@ export const Theme = {
     grayV2: "#4E4B59",
     grayV3: "#5F5C6B",
     grayV4: "#00000099",
+    grayV5: "#ACABB7",
     redColor: "#F64F77",
     orangeColor: "#F8AE3F",
     orangeColorV2: "#F9A620",

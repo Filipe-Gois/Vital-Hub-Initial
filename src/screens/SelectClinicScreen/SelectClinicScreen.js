@@ -13,7 +13,7 @@ import { Theme } from "../../themes";
 import ClinicCard from "../../components/ClinicCard";
 import { FlatListStyle } from "../../components/FlatList/style";
 
-const SelectClinicScreen = () => {
+const SelectClinicScreen = ({ navigation }) => {
   const [selectedClinic, setSelectedClinic] = useState(null);
   const [clinics, setClinics] = useState([
     {
@@ -77,11 +77,14 @@ const SelectClinicScreen = () => {
               keyExtractor={(item) => item.id}
             />
 
-            <Button padding={"0"}>
+            <Button
+              onPress={() => navigation.navigate("SelectDoctor")}
+              padding={"0"}
+            >
               <ButtonTitle>Continuar</ButtonTitle>
             </Button>
 
-            <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+            <ButtonSecondary onPress={() => navigation.goBack()}>
               <TextCreateAccount2>Cancelar</TextCreateAccount2>
             </ButtonSecondary>
           </FormBox>

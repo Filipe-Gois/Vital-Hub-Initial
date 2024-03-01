@@ -11,7 +11,7 @@ import ClinicAddress from "../../components/ClinicAddress";
 import { ButtonSecondary } from "../../components/Button/style";
 import { TextCreateAccount2 } from "../../components/Paragraph/style";
 
-const ClinicAddressScreen = () => {
+const ClinicAddressScreen = ({ navigation }) => {
   const [clinic, setClinic] = useState({
     id: "1",
     name: "Clínica Natureh",
@@ -28,7 +28,7 @@ const ClinicAddressScreen = () => {
 
         <ClinicAddress dados={clinic} />
 
-        <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+        <ButtonSecondary onPress={() => navigation.goBack()}>
           <TextCreateAccount2>Cancelar</TextCreateAccount2>
         </ButtonSecondary>
       </MainContent>

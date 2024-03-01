@@ -14,7 +14,7 @@ import {
 } from "../../components/Paragraph/style";
 import { Title } from "../../components/Title/style";
 
-const CreateAccountScreen = () => {
+const CreateAccountScreen = ({ navigation }) => {
   return (
     <Container>
       <MainContent>
@@ -35,10 +35,7 @@ const CreateAccountScreen = () => {
             <ButtonTitle>CADASTRAR</ButtonTitle>
           </Button>
 
-          <ButtonSecondary
-            padding={"0"}
-            onPress={() => setShowModalCancel(false)}
-          >
+          <ButtonSecondary padding={"0"} onPress={() => navigation.goBack()}>
             <TextCreateAccount2>Cancelar</TextCreateAccount2>
           </ButtonSecondary>
         </FormBox>

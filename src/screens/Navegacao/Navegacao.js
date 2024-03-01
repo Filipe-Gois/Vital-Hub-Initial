@@ -33,33 +33,33 @@ export const Navegacao = ({ navigation }) => {
       <Button title="Perfil" onPress={() => navigation.navigate("Perfil")} />
 
       <Button
-        title="Home User"
-        onPress={() => navigation.navigate("Home User")}
+        title="HomeUser"
+        onPress={() => navigation.navigate("HomeUser")}
       />
 
       <Button
-        title="Select Clinic"
-        onPress={() => navigation.navigate("Select Clinic")}
+        title="SelectClinic"
+        onPress={() => navigation.navigate("SelectClinic")}
       />
 
       <Button
-        title="Select Doctor"
-        onPress={() => navigation.navigate("Select Doctor")}
+        title="SelectDoctor"
+        onPress={() => navigation.navigate("SelectDoctor")}
       />
 
       <Button
-        title="Select Date"
-        onPress={() => navigation.navigate("Select Date")}
+        title="SelectDate"
+        onPress={() => navigation.navigate("SelectDate")}
       />
 
       <Button
-        title="View Medical Record"
-        onPress={() => navigation.navigate("View Medical Record")}
+        title="ViewMedicalRecord"
+        onPress={() => navigation.navigate("ViewMedicalRecord")}
       />
 
       <Button
-        title="Clinic Address"
-        onPress={() => navigation.navigate("Clinic Address")}
+        title="ClinicAddress"
+        onPress={() => navigation.navigate("ClinicAddress")}
       />
     </View>
   );

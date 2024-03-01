@@ -7,14 +7,14 @@ import {
 } from "../../components/Container/style";
 import UserImage from "../../assets/UserProfileImage.jpg";
 import Label from "../../components/Label";
-import { Button } from "../../components/Button/style";
+import { Button, ButtonGray } from "../../components/Button/style";
 import { ButtonTitle } from "../../components/ButtonTitle/style";
 import { Theme } from "../../themes";
 import { ContainerInputBox } from "../../components/Container";
 import { Input } from "../../components/Input";
 import { ParagraphSemiBold } from "../../components/Paragraph/style";
 
-export const PerfilScreen = () => {
+export const PerfilScreen = ({ navigation }) => {
   return (
     <Container>
       <MainContentScroll>
@@ -81,6 +81,13 @@ export const PerfilScreen = () => {
             <Button>
               <ButtonTitle>Salvar</ButtonTitle>
             </Button>
+            <Button>
+              <ButtonTitle>Editar</ButtonTitle>
+            </Button>
+
+            <ButtonGray onPress={() => navigation.goBack()}>
+              <ButtonTitle>Sair do app</ButtonTitle>
+            </ButtonGray>
           </FormBox>
         </MainContent>
       </MainContentScroll>

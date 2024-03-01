@@ -18,7 +18,7 @@ import { InputSelect } from "../../components/Input";
 import { LabelStyle } from "../../components/Label/style";
 import { ModalConfirmarAgendamento } from "../../components/Modal";
 
-const SelectDateScreen = () => {
+const SelectDateScreen = ({ navigation }) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <Container>
@@ -41,7 +41,7 @@ const SelectDateScreen = () => {
               <ButtonTitle>Continuar</ButtonTitle>
             </Button>
 
-            <ButtonSecondary onPress={() => setShowModal(false)}>
+            <ButtonSecondary onPress={() => navigation.goBack()}>
               <TextCreateAccount2>Cancelar</TextCreateAccount2>
             </ButtonSecondary>
           </FormBox>

@@ -18,7 +18,7 @@ import { Button, ButtonSecondary } from "../../components/Button/style";
 import { ButtonTitle } from "../../components/ButtonTitle/style";
 import { LeftArrowAOrXComponent } from "../../components/LeftArrowAOrX";
 
-const CheckEmailSreen = () => {
+const CheckEmailSreen = ({ navigation }) => {
   const [user, setUser] = useState({
     userEmail: "username@email.com",
     number1: 0,
@@ -29,7 +29,7 @@ const CheckEmailSreen = () => {
   return (
     <Container>
       <MainContent>
-        <LeftArrowAOrXComponent isLefArrow={false} />
+        <LeftArrowAOrXComponent isLefArrow={false} navigation={navigation} />
         <LogoComponent />
 
         <FormBox>
@@ -79,10 +79,7 @@ const CheckEmailSreen = () => {
             <ButtonTitle>ENTRAR</ButtonTitle>
           </Button>
 
-          <ButtonSecondary
-            padding={"0"}
-            onPress={() => setShowModalCancel(false)}
-          >
+          <ButtonSecondary padding={"0"} onPress={() => navigation.goBack()}>
             <TextCreateAccount2>Cancelar</TextCreateAccount2>
           </ButtonSecondary>
         </FormBox>

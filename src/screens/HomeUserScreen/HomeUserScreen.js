@@ -19,7 +19,7 @@ import { FlatListStyle } from "../../components/FlatList/style";
 import { CardConsulta } from "../../components/CardConsulta";
 import Stethoscope from "../../components/stethoscope";
 
-const HomeUserScreen = () => {
+const HomeUserScreen = ({ navigation }) => {
   const [statusLista, setStatusLista] = useState("Pendente");
   const [agendarConsulta, setAgendarConsulta] = useState(false);
   const [dadosPaciente, setDadosPaciente] = useState([
@@ -178,6 +178,9 @@ const HomeUserScreen = () => {
               }
               textButton1={"Confirmar"}
               textButton2={"Cancelar"}
+              // goBack={true}
+              navigation={navigation}
+              // setNavigation={"SelectClinic"}
             />
 
             <ModalComponent
@@ -197,6 +200,8 @@ const HomeUserScreen = () => {
         agendarConsulta={agendarConsulta}
         onPressAgendar={() => setAgendarConsulta(true)}
         setAgendarConsulta={() => setAgendarConsulta(false)}
+        navigation={navigation}
+        setNavigation={"SelectClinic"}
       />
     </Container>
   );

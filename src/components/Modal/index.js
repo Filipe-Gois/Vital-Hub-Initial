@@ -37,6 +37,7 @@ export const ModalComponent = ({
   textButton2 = "",
   cancel = true,
   srcImage = Nicole,
+
   ...rest
 }) => {
   return (
@@ -57,7 +58,11 @@ export const ModalComponent = ({
             {!cancel && <Paragraph>{texto2}</Paragraph>}
           </ModalTextBox>
 
-          <Button padding={"0"}>
+          <Button
+            onPress={() => navigation.goBack()}
+            // onPress={() =>setShowModalCancel(false)}
+            padding={"0"}
+          >
             <ButtonTitle>{textButton1}</ButtonTitle>
           </Button>
 
@@ -79,6 +84,9 @@ export const ModalAgendarConsulta = ({
   textButton2 = "",
   cancel = true,
   srcImage = Nicole,
+  navigation,
+  setNavigation,
+  goBack = false,
   ...rest
 }) => {
   return (
@@ -116,7 +124,12 @@ export const ModalAgendarConsulta = ({
             placeholder={"Informe a localização"}
           />
 
-          <Button padding={"0"}>
+          <Button
+            onPress={() =>
+              goBack ? navigation.goBack() : navigation.navigate(setNavigation)
+            }
+            padding={"0"}
+          >
             <ButtonTitle>{textButton1}</ButtonTitle>
           </Button>
 
@@ -139,6 +152,9 @@ export const ModalConfirmarAgendamento = ({
   textButton2 = "",
   cancel = true,
   srcImage = Nicole,
+  navigation,
+  setNavigation = "",
+  goBack = false,
   ...rest
 }) => {
   return (
@@ -175,7 +191,11 @@ export const ModalConfirmarAgendamento = ({
             <ConsultaInfoBox title="Tipo da consulta" info="Rotina" />
           </ConsultaInfoContent>
 
-          <Button>
+          <Button
+            onPress={() =>
+              goBack ? navigation.goBack() : navigation.navigate(setNavigation)
+            }
+          >
             <ButtonTitle>Confirmar</ButtonTitle>
           </Button>
 

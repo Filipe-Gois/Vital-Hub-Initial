@@ -16,7 +16,7 @@ import DoctorKumushiro from "../../assets/doctorKumushiro.png";
 import DoctorRodrigo from "../../assets/doctorRodrigo.png";
 import DoctorCard from "../../components/DoctorCard";
 
-const SelectDoctorScreen = () => {
+const SelectDoctorScreen = ({ navigation }) => {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [doctors, setDoctors] = useState([
     {
@@ -67,11 +67,14 @@ const SelectDoctorScreen = () => {
               keyExtractor={(item) => item.id}
             />
 
-            <Button padding={"0"}>
+            <Button
+              onPress={() => navigation.navigate("SelectDate")}
+              padding={"0"}
+            >
               <ButtonTitle>Continuar</ButtonTitle>
             </Button>
 
-            <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+            <ButtonSecondary onPress={() => navigation.goBack()}>
               <TextCreateAccount2>Cancelar</TextCreateAccount2>
             </ButtonSecondary>
           </FormBox>

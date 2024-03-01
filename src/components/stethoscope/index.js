@@ -7,6 +7,9 @@ const Stethoscope = ({
   onPressAgendar,
   setAgendarConsulta,
   agendarConsulta,
+  navigation,
+  setNavigation,
+  goBack,
 }) => {
   // const [agendarConsulta, setAgendarConsulta] = useState(false);
   return (
@@ -21,6 +24,9 @@ const Stethoscope = ({
         visible={agendarConsulta}
         setShowModalCancel={setAgendarConsulta}
         title={"Agendar consulta"}
+        goBack={goBack}
+        navigation={navigation}
+        setNavigation={setNavigation}
       />
     </>
   );

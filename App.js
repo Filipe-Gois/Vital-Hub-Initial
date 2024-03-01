@@ -71,31 +71,31 @@ const App = () => {
         <Stack.Screen
           name="RecoverPassword"
           component={RecoverPasswordScreen}
-          options={{ title: "Recover Password" }}
+          options={{ title: "RecoverPassword" }}
         />
 
         <Stack.Screen
           name="CheckEmail"
           component={CheckEmailSreen}
-          options={{ title: "Check your Email" }}
+          options={{ title: "CheckyourEmail" }}
         />
 
         <Stack.Screen
           name="RedefinePassword"
           component={RedefinePasswordScreen}
-          options={{ title: "Redefine your password" }}
+          options={{ title: "Redefineyourpassword" }}
         />
 
         <Stack.Screen
           name="CreateAccount"
           component={CreateAccountScreen}
-          options={{ title: "Create Account" }}
+          options={{ title: "CreateAccount" }}
         />
 
         <Stack.Screen
           name="MedicalRecord"
           component={MedicalRecordScreen}
-          options={{ title: "Medical Record" }}
+          options={{ title: "MedicalRecord" }}
         />
 
         <Stack.Screen
@@ -105,38 +105,38 @@ const App = () => {
         />
 
         <Stack.Screen
-          name="Home User"
+          name="HomeUser"
           component={HomeUserScreen}
-          options={{ title: "Home User" }}
+          options={{ title: "HomeUser" }}
         />
 
         <Stack.Screen
-          name="Select Clinic"
+          name="SelectClinic"
           component={SelectClinicScreen}
-          options={{ title: "Select Clinic" }}
+          options={{ title: "SelectClinic" }}
         />
         <Stack.Screen
-          name="Select Doctor"
+          name="SelectDoctor"
           component={SelectDoctorScreen}
-          options={{ title: "Select Doctor" }}
+          options={{ title: "SelectDoctor" }}
         />
 
         <Stack.Screen
-          name="Select Date"
+          name="SelectDate"
           component={SelectDateScreen}
-          options={{ title: "Select Date" }}
+          options={{ title: "SelectDate" }}
         />
 
         <Stack.Screen
-          name="View Medical Record"
+          name="ViewMedicalRecord"
           component={ViewMRScreen}
-          options={{ title: "View Medical Record" }}
+          options={{ title: "ViewMedicalRecord" }}
         />
 
         <Stack.Screen
-          name="Clinic Address"
+          name="ClinicAddress"
           component={ClinicAddressScreen}
-          options={{ title: "Clinic Address" }}
+          options={{ title: "ClinicAddress" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

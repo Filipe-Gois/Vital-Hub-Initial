@@ -11,7 +11,7 @@ import { ButtonTitle } from "../../components/ButtonTitle/style";
 import Label from "../../components/Label";
 import { TextCreateAccount2 } from "../../components/Paragraph/style";
 
-const DoctorHomeScreen = () => {
+const DoctorHomeScreen = ({ navigation }) => {
   return (
     <Container>
       <MainContentScroll>
@@ -43,10 +43,7 @@ const DoctorHomeScreen = () => {
               <ButtonTitle>Salvar</ButtonTitle>
             </Button>
 
-            <ButtonSecondary
-              padding={"0"}
-              onPress={() => setShowModalCancel(false)}
-            >
+            <ButtonSecondary padding={"0"} onPress={() => navigation.goBack()}>
               <TextCreateAccount2>Cancelar</TextCreateAccount2>
             </ButtonSecondary>
           </FormBox>

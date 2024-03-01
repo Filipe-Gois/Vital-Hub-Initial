@@ -30,7 +30,7 @@ import {
   TextCreateAccount2,
 } from "../../components/Paragraph/style.js";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   return (
     <Container>
       <MainContent>
@@ -43,8 +43,13 @@ const LoginScreen = () => {
             <Input placeholder={"Email:"} />
             <Input placeholder={"Senha:"} />
           </InputBox>
-
-          <LinkMedium>Esqueceu sua senha?</LinkMedium>
+          <ButtonSecondary
+            alignSelf={"flex-start"}
+            padding={"0"}
+            onPress={() => navigation.navigate("RecoverPassword")}
+          >
+            <LinkMedium>Esqueceu sua senha?</LinkMedium>
+          </ButtonSecondary>
 
           <ButtonBox>
             <Button>
@@ -70,9 +75,9 @@ const LoginScreen = () => {
 
           <ButtonSecondary
             padding={"0"}
-            onPress={() => setShowModalCancel(false)}
+            onPress={() => navigation.navigate("CreateAccount")}
           >
-            <TextCreateAccount2>Cancelar</TextCreateAccount2>
+            <TextCreateAccount2>Crie uma conta agora!</TextCreateAccount2>
           </ButtonSecondary>
         </CreateAccountBox>
       </MainContent>

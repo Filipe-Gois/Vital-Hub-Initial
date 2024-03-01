@@ -14,6 +14,12 @@ export const Button = styled.TouchableOpacity`
   justify-content: center;
 `;
 
+export const ButtonGray = styled(Button)`
+  background-color: ${Theme.colors.grayV5};
+  width: 50%;
+  border: 1px solid ${Theme.colors.grayV5};
+`;
+
 export const ButtonGoogle = styled(Button)`
   background-color: ${Theme.colors.whiteColor};
   border: 1px solid ${Theme.colors.secondary};
@@ -46,6 +52,7 @@ export const ButtonSecondary = styled(Button)`
   border: none;
   width: ${(props) => (props.fieldWidth ? props.fieldWidth : "max-content")};
   height: max-content;
+  align-self: ${(props) => (props.alignSelf ? props.alignSelf : "auto")};
 `;
 
 export const ButtonBorderCyan = styled(Button)`

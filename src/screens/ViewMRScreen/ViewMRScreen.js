@@ -19,7 +19,7 @@ import {
 } from "../../components/Paragraph/style";
 import { ButtonAqua } from "../../components/Button";
 
-const ViewMRScreen = () => {
+const ViewMRScreen = ({ navigation }) => {
   return (
     <Container>
       <MainContentScroll>
@@ -113,7 +113,7 @@ const ViewMRScreen = () => {
               isTitulo={false}
             />
 
-            <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+            <ButtonSecondary onPress={() => navigation.goBack()}>
               <TextCreateAccount2>Voltar</TextCreateAccount2>
             </ButtonSecondary>
           </FormBox>
