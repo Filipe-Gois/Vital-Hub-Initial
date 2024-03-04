@@ -29,7 +29,7 @@ const ClinicAddressScreen = ({ navigation }) => {
         <ClinicAddress dados={clinic} />
 
         <ButtonSecondary onPress={() => navigation.goBack()}>
-          <TextCreateAccount2>Cancelar</TextCreateAccount2>
+          <TextCreateAccount2>Voltar</TextCreateAccount2>
         </ButtonSecondary>
       </MainContent>
     </Container>
