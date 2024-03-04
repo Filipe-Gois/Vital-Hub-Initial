@@ -63,6 +63,7 @@ export const ButtonBorderCyan = styled(Button)`
 
 export const ButtonAquaStyle = styled(Button)`
   background-color: ${Theme.colors.primary};
+  border: 1px solid ${Theme.colors.primary};
   flex-direction: row;
   justify-content: center;
   align-items: center;
