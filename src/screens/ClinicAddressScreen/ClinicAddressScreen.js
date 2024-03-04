@@ -10,6 +10,8 @@ import GpsMap from "../../assets/MapImage.png";
 import ClinicAddress from "../../components/ClinicAddress";
 import { ButtonSecondary } from "../../components/Button/style";
 import { TextCreateAccount2 } from "../../components/Paragraph/style";
+import MapaGps from "../../components/MapaGps";
+import { View } from "react-native";
 
 const ClinicAddressScreen = ({ navigation }) => {
   const [clinic, setClinic] = useState({
@@ -24,7 +26,9 @@ const ClinicAddressScreen = ({ navigation }) => {
   return (
     <Container>
       <MainContent>
-        <GPS src={GpsMap} />
+
+
+        <MapaGps />
 
         <ClinicAddress dados={clinic} />
 
