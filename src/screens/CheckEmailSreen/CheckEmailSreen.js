@@ -75,7 +75,7 @@ const CheckEmailSreen = ({ navigation }) => {
             />
           </InputBoxCheckEmail>
 
-          <Button>
+          <Button onPress={() => navigation.navigate("RedefinePassword")}>
             <ButtonTitle>ENTRAR</ButtonTitle>
           </Button>
 

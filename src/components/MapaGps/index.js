@@ -1,29 +1,35 @@
 import MapView from "react-native-maps";
 import { StyleSheet } from "react-native";
 import { GpsBox, MapaStyle } from "./style";
-import * as Location from "expo-location";
+import {
+  requestForegroundPermissionsAsync,
+  getCurrentPositionAsync,
+  LocationObject,
+} from "expo-location";
+
 import { useEffect, useState } from "react";
 
 const MapaGps = () => {
   const [location, setLocation] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        console.error('Permissão para acessar a localização negada');
-        return;
-      }
+  const requestLocationPermissions = async () => {
+    const { granted } = await requestForegroundPermissionsAsync();
 
-      let location = await Location.getCurrentPositionAsync({});
-      setLocation(location);
-    })();
- }, []);
+    const currentPosition = await getCurrentPositionAsync();
+
+    if (granted) {
+      // const currentPosition = await getCurrentPositionAsync();
+      setLocation(currentPosition);
+    }
+  };
+
+  useEffect(() => {
+    requestLocationPermissions();
+  }, []);
 
   return (
     <GpsBox>
       <MapaStyle
-
         // initialCamera={{
         //   center: {
         //     latitude: location.latitude,
@@ -34,10 +40,16 @@ const MapaGps = () => {
         //   altitude: location.altitude,
         //   zoom: 16,
         // }}
+
+        // initialRegion={{
+        //   latitude: location.coords.latitude,
+        //   longitude: location.coords.longitude,
+        //   latitudeDelta: 0.005,
+        // }}
         initialCamera={{
           center: {
-            latitude: 37.78825,
-            longitude: -122.4324,
+            latitude: -23.6151099,
+            longitude: -46.5709332,
           },
           pitch: 0,
           heading: 0,

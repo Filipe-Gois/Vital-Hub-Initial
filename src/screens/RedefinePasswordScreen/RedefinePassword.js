@@ -30,7 +30,7 @@ const RedefinePasswordScreen = ({ navigation }) => {
             <Input placeholder={"Confirmar nova senha"} />
           </InputBox>
 
-          <Button>
+          <Button onPress={() => navigation.replace("Login")}>
             <ButtonTitle>CONFIRMAR NOVA SENHA</ButtonTitle>
           </Button>
         </FormBox>

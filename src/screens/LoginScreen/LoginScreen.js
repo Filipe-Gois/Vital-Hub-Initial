@@ -31,6 +31,10 @@ import {
 } from "../../components/Paragraph/style.js";
 
 const LoginScreen = ({ navigation }) => {
+  const Login = async () => {
+    navigation.replace("Main");
+  };
+
   return (
     <Container>
       <MainContent>
@@ -48,11 +52,11 @@ const LoginScreen = ({ navigation }) => {
             padding={"0"}
             onPress={() => navigation.navigate("RecoverPassword")}
           >
-            <LinkMedium>Esqueceu sua senha?</LinkMedium>
+            <LinkMedium onPress={() => navigation.navigate("RecoverPassword")}>Esqueceu sua senha?</LinkMedium>
           </ButtonSecondary>
 
           <ButtonBox>
-            <Button>
+            <Button onPress={(e) => Login()}>
               <ButtonTitle>Entrar</ButtonTitle>
             </Button>
 
@@ -71,7 +75,7 @@ const LoginScreen = ({ navigation }) => {
         </FormBox>
 
         <CreateAccountBox>
-          <TextCreateAccount1>Não tem conta ? {""}</TextCreateAccount1>
+          <TextCreateAccount1 onPress={(e) => navigation.replace("CreateAccount")}>Não tem conta ? {""}</TextCreateAccount1>
 
           <ButtonSecondary
             padding={"0"}

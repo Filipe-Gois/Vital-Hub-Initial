@@ -28,7 +28,7 @@ const RecoverPasswordScreen = ({ navigation }) => {
           </Paragraph>
 
           <Input placeholder={"Usuário ou E-mail"} />
-          <Button>
+          <Button onPress={() => navigation.navigate("CheckEmail")}>
             <ButtonTitle>Continuar</ButtonTitle>
           </Button>
         </FormBox>

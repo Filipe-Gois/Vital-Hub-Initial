@@ -29,6 +29,7 @@ import SelectDoctorScreen from "./src/screens/SelectDoctorScreen/SelectDoctorScr
 import SelectDateScreen from "./src/screens/SelectDateScreen/SelectDateScreen";
 import ViewMRScreen from "./src/screens/ViewMRScreen/ViewMRScreen";
 import ClinicAddressScreen from "./src/screens/ClinicAddressScreen/ClinicAddressScreen";
+import Main from "./src/screens/Main/Main";
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -57,16 +58,18 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Navegação"
-          component={Navegacao}
-          options={{ title: "Navegação" }}
-        />
-
-        <Stack.Screen
           name="Login"
           component={LoginScreen}
           options={{ title: "Login" }}
         />
+
+        <Stack.Screen name="Main" component={Main} />
+
+        {/* <Stack.Screen
+          name="Navegação"
+          component={Navegacao}
+          options={{ title: "Navegação" }}
+        /> */}
 
         <Stack.Screen
           name="RecoverPassword"
