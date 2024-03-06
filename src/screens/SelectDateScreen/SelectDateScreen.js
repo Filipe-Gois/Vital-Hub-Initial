@@ -51,6 +51,8 @@ const SelectDateScreen = ({ navigation }) => {
       <ModalConfirmarAgendamento
         visible={showModal}
         setShowModalCancel={setShowModal}
+        navigation={navigation}
+        setNavigation="HomeUser"
       />
     </Container>
   );

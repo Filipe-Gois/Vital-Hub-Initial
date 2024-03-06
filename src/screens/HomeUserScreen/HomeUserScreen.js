@@ -18,6 +18,8 @@ import { ModalComponent } from "../../components/Modal";
 import { FlatListStyle } from "../../components/FlatList/style";
 import { CardConsulta } from "../../components/CardConsulta";
 import Stethoscope from "../../components/stethoscope";
+import { FontAwesome6 } from "@expo/vector-icons";
+import { WelComeImage } from "../../components/ImageProfile";
 
 const HomeUserScreen = ({ navigation }) => {
   const [statusLista, setStatusLista] = useState("Pendente");
@@ -111,12 +113,14 @@ const HomeUserScreen = ({ navigation }) => {
   const [showModalAppointment, setShowModalAppointment] = useState(false);
   return (
     <Container>
-      <Header src={UserImage} />
-
+     
       <MainContentScroll>
         <MainContent>
+          <Header
+            // viewProfile={() => navigation.replace("Perfil")}
+            src={UserImage}
+          />
           <CalendarList />
-
           <ButtonBox
             fieldFlexDirection={"row"}
             fieldJustifyContent={"space-between"}
@@ -149,7 +153,6 @@ const HomeUserScreen = ({ navigation }) => {
               </ButtonTextStyle>
             </ButtonListAppontment>
           </ButtonBox>
-
           <ContainerBoxStyle fieldAlignItems="center" fieldGap={"15px"}>
             <FlatListStyle
               data={dadosPaciente}
@@ -180,7 +183,7 @@ const HomeUserScreen = ({ navigation }) => {
               textButton2={"Cancelar"}
               // goBack={true}
               navigation={navigation}
-              // setNavigation={"SelectClinic"}
+              setNavigation={"Home"}
             />
 
             <ModalComponent

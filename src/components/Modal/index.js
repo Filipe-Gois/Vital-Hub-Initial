@@ -37,6 +37,8 @@ export const ModalComponent = ({
   textButton2 = "",
   cancel = true,
   srcImage = Nicole,
+  setNavigation,
+  navigation,
 
   ...rest
 }) => {
@@ -59,7 +61,7 @@ export const ModalComponent = ({
           </ModalTextBox>
 
           <Button
-            onPress={() => navigation.goBack()}
+            onPress={() => navigation.navigate(setNavigation)}
             // onPress={() =>setShowModalCancel(false)}
             padding={"0"}
           >
@@ -193,7 +195,7 @@ export const ModalConfirmarAgendamento = ({
 
           <Button
             onPress={() =>
-              goBack ? navigation.goBack() : navigation.navigate(setNavigation)
+              goBack ? navigation.goBack() : navigation.replace(setNavigation)
             }
           >
             <ButtonTitle>Confirmar</ButtonTitle>

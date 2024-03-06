@@ -4,9 +4,9 @@ import Doctor from "../../assets/doctorFull.png";
 import { Paragraph, TextCreateAccount1 } from "../Paragraph/style";
 import { Theme } from "../../themes";
 
-export const WelCome = ({ src = "" }) => {
+export const WelCome = ({ src = "", viewProfile }) => {
   return (
-    <WelComeStyle>
+    <WelComeStyle onPress={viewProfile}>
       <WelComeImage
         widthImage="32%"
         heigthImage="100%"
