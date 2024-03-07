@@ -36,18 +36,23 @@ export const ModalComponent = ({
   textButton1 = "",
   textButton2 = "",
   cancel = true,
-  srcImage = Nicole,
-  setNavigation,
+  srcImage = "",
+  setNavigation = "",
   navigation,
 
   ...rest
 }) => {
+  const handleClose = async () => {
+    await setShowModalCancel(false);
+    navigation.navigation(setNavigation);
+  };
   return (
     <ModalStyle
       visible={visible}
       transparent={true}
       animationType="fade"
       title=""
+      animationOutTiming={0}
       {...rest}
     >
       <PatientModal>
@@ -68,7 +73,7 @@ export const ModalComponent = ({
             <ButtonTitle>{textButton1}</ButtonTitle>
           </Button>
 
-          <ButtonSecondary onPress={() => setShowModalCancel(false)}>
+          <ButtonSecondary onPress={() => handleClose()}>
             <TextCreateAccount2>{textButton2}</TextCreateAccount2>
           </ButtonSecondary>
         </ModalContent>

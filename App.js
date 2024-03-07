@@ -22,14 +22,13 @@ import CreateAccountScreen from "./src/screens/CreateAccountScreen/CreateAccount
 import MedicalRecordScreen from "./src/screens/MedicalRecordScreen/MedicalRecordScreen";
 import { PerfilScreen } from "./src/screens/PerfilScreen/PerfilScreen";
 import { ConsultasScreen } from "./src/screens/ConsultasScreen/ConsultasScreen";
-import HomeScreen from "./src/screens/HomeScreen";
-import HomeUserScreen from "./src/screens/HomeUserScreen/HomeUserScreen";
 import SelectClinicScreen from "./src/screens/SelectClinicScreen/SelectClinicScreen";
 import SelectDoctorScreen from "./src/screens/SelectDoctorScreen/SelectDoctorScreen";
 import SelectDateScreen from "./src/screens/SelectDateScreen/SelectDateScreen";
 import ViewMRScreen from "./src/screens/ViewMRScreen/ViewMRScreen";
 import ClinicAddressScreen from "./src/screens/ClinicAddressScreen/ClinicAddressScreen";
 import Main from "./src/screens/Main/Main";
+import HomeScreen from "./src/screens/HomeScreen/HomeScreen";
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -57,18 +56,18 @@ const App = () => {
 
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Navegacao"
           component={Navegacao}
           options={{ title: "Navegacao" }}
-        />
+        /> */}
         <Stack.Screen
           name="Login"
           component={LoginScreen}
           options={{ title: "Login" }}
         />
 
-        {/* <Stack.Screen name="Main" component={Main} /> */}
+        <Stack.Screen name="Main" component={Main} />
 
         {/* <Stack.Screen
           name="Navegação"
@@ -79,7 +78,7 @@ const App = () => {
         <Stack.Screen
           name="RecoverPassword"
           component={RecoverPasswordScreen}
-          options={{ title: "RecoverPassword" }}
+          options={{ title: "RecoverPassword", headerShown: false }}
         />
 
         <Stack.Screen
@@ -113,9 +112,9 @@ const App = () => {
         />
 
         <Stack.Screen
-          name="HomeUser"
-          component={HomeUserScreen}
-          options={{ title: "HomeUser" }}
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Home" }}
         />
 
         <Stack.Screen

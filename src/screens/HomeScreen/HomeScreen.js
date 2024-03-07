@@ -13,6 +13,7 @@ import { CalendarList } from "../../components/Calendar";
 import { ButtonListAppontment } from "../../components/Button";
 import { ButtonTextStyle } from "../../components/ButtonTitle/style";
 import Nicole from "../../assets/nicole-sarga.png";
+import DoctorBanner from "../../assets/DoctorBanner.png";
 import User from "../../assets/UserProfileImageWelcome.png";
 import { ModalComponent } from "../../components/Modal";
 import { FlatListStyle } from "../../components/FlatList/style";
@@ -21,7 +22,9 @@ import Stethoscope from "../../components/stethoscope";
 import { FontAwesome6 } from "@expo/vector-icons";
 import { WelComeImage } from "../../components/ImageProfile";
 
-const HomeUserScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation }) => {
+  const [profile, setProfile] = useState("Paciente1");
+
   const [statusLista, setStatusLista] = useState("Pendente");
   const [agendarConsulta, setAgendarConsulta] = useState(false);
   const [dadosPaciente, setDadosPaciente] = useState([
@@ -106,6 +109,24 @@ const HomeUserScreen = ({ navigation }) => {
       srcImage: User,
       situacao: "Pendente",
     },
+    {
+      id: "10",
+      name: "Fefe",
+      type: "Urgência",
+      age: "28",
+      horario: "15:00",
+      srcImage: User,
+      situacao: "Pendente",
+    },
+    {
+      id: "11",
+      name: "Fefe",
+      type: "Urgência",
+      age: "28",
+      horario: "15:00",
+      srcImage: User,
+      situacao: "Pendente",
+    },
   ]);
 
   //state para a exibição dos modais
@@ -113,12 +134,11 @@ const HomeUserScreen = ({ navigation }) => {
   const [showModalAppointment, setShowModalAppointment] = useState(false);
   return (
     <Container>
-     
       <MainContentScroll>
         <MainContent>
           <Header
-            // viewProfile={() => navigation.replace("Perfil")}
             src={UserImage}
+            viewProfile={() => navigation.navigate("Perfil")}
           />
           <CalendarList />
           <ButtonBox
@@ -160,8 +180,17 @@ const HomeUserScreen = ({ navigation }) => {
               renderItem={({ item }) =>
                 statusLista === item.situacao && (
                   <CardConsulta
+                    onPress={
+                      profile === "Paciente"
+                        ? () => setShowModalAppointment(true)
+                        : null
+                    }
                     onPressCancel={() => setShowModalCancel(true)}
-                    onPressAppointment={() => setShowModalAppointment(true)}
+                    onPressAppointment={
+                      profile !== "Paciente"
+                        ? () => setShowModalAppointment(true)
+                        : () => navigation.navigate("ViewMedicalRecord")
+                    }
                     dados={item}
                     statusLista={item.situacao}
                   />
@@ -183,31 +212,43 @@ const HomeUserScreen = ({ navigation }) => {
               textButton2={"Cancelar"}
               // goBack={true}
               navigation={navigation}
-              setNavigation={"Home"}
+              setNavigation="Main"
             />
 
             <ModalComponent
               visible={showModalAppointment}
               setShowModalCancel={setShowModalAppointment}
-              title={"Niccole Sarga"}
-              texto1={"22 anos"}
-              texto2={"niccole.sarga@gmail.com"}
-              textButton1={"Inserir Prontuário"}
+              srcImage={profile === "Paciente" ? DoctorBanner : Nicole}
+              title={profile === "Paciente" ? "Dr. Claudio" : "Niccole Sarga"}
+              texto1={profile === "Paciente" ? "Cliníco geral" : "22 anos"}
+              texto2={
+                profile === "Paciente" ? "CRM-15286" : "niccole.sarga@gmail.com"
+              }
+              textButton1={
+                profile === "Paciente"
+                  ? "Ver local da consulta"
+                  : "Inserir Prontuário"
+              }
               textButton2={"Cancelar"}
               cancel={false}
+              navigation={navigation}
+              setNavigation={profile === "Paciente" ? "ClinicAddress" : "MedicalRecord"}
             />
           </ContainerBoxStyle>
         </MainContent>
       </MainContentScroll>
-      <Stethoscope
-        agendarConsulta={agendarConsulta}
-        onPressAgendar={() => setAgendarConsulta(true)}
-        setAgendarConsulta={() => setAgendarConsulta(false)}
-        navigation={navigation}
-        setNavigation={"SelectClinic"}
-      />
+
+      {profile === "Paciente" && (
+        <Stethoscope
+          agendarConsulta={agendarConsulta}
+          onPressAgendar={() => setAgendarConsulta(true)}
+          setAgendarConsulta={() => setAgendarConsulta(false)}
+          navigation={navigation}
+          setNavigation={"SelectClinic"}
+        />
+      )}
     </Container>
   );
 };
 
-export default HomeUserScreen;
+export default HomeScreen;

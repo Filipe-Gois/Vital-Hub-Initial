@@ -17,14 +17,17 @@ import { Theme } from "../../themes";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Nicole from "../../assets/nicole-sarga.png";
 import { ButtonSecondary } from "../Button/style";
+import { useState } from "react";
 
 export const CardConsulta = ({
   dados = [],
   onPressCancel,
   onPressAppointment,
+  onPress,
 }) => {
+  const [profile, setProfile] = useState("Paciente");
   return (
-    <CardConsultaStyle>
+    <CardConsultaStyle onPress={onPress}>
       <WelComeImage widthImage="26%" heigthImage="100%" src={dados.srcImage} />
 
       <InfoTextBox>

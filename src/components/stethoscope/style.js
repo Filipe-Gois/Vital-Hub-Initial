@@ -8,7 +8,7 @@ export const StethoscopeBox = styled.TouchableOpacity`
   height: 60px;
   align-items: center;
   justify-content: center;
-  position: relative;
-  bottom: 76px;
+  position: absolute;
+  bottom: 15px;
   right: 5%;
 `;

@@ -52,7 +52,7 @@ const SelectDateScreen = ({ navigation }) => {
         visible={showModal}
         setShowModalCancel={setShowModal}
         navigation={navigation}
-        setNavigation="HomeUser"
+        setNavigation="Main"
       />
     </Container>
   );

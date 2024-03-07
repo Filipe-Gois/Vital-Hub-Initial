@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WelComeStyle = styled.View`
+export const WelComeStyle = styled.TouchableOpacity`
   width: 60%;
   height: 100%;
   flex-direction: row;

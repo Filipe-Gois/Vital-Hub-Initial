@@ -1,27 +1,27 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../HomeScreen";
 import { PerfilScreen } from "../PerfilScreen/PerfilScreen";
 import ClinicAddressScreen from "../ClinicAddressScreen/ClinicAddressScreen";
 import { Theme } from "../../themes";
 import { MainContentIcon, TextIcon } from "./style";
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
+import HomeScreen from "../HomeScreen/HomeScreen";
 const BottomTab = createBottomTabNavigator();
 
 const Main = () => {
   return (
     <BottomTab.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeScreen"
       screenOptions={({ route }) => ({
         tabBarStyle: {
           backgroundColor: Theme.colors.whiteColor,
-          height: 80,
+          height: 60,
           paddingTop: 10,
         },
         tabBarActiveBackgroundColor: "transparent",
         tabBarShowLabel: false,
         headerShown: false,
         tabBarIcon: ({ focused }) => {
-          if (route.name === "Home") {
+          if (route.name === "HomeScreen") {
             return (
               <MainContentIcon
                 tabBarActiveBackgroundColor={
@@ -74,7 +74,7 @@ const Main = () => {
         },
       })}
     >
-      <BottomTab.Screen name="Home" component={HomeScreen} />
+      <BottomTab.Screen name="HomeScreen" component={HomeScreen} />
 
       <BottomTab.Screen name="Perfil" component={PerfilScreen} />
       {/* <BottomTab.Screen name="GPS" component={ClinicAddressScreen} /> */}

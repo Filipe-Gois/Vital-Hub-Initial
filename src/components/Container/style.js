@@ -27,7 +27,7 @@ export const MainContent = styled.View`
   background-color: ${Theme.colors.lightWhite};
   width: 100%;
   height: 100%;
-  margin: 0 0 30px 0;
+  margin: 0 0 90px 0;
   align-items: center;
   background-color: ${Theme.colors.lightWhite};
 `;

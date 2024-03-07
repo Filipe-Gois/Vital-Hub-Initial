@@ -18,7 +18,7 @@ const Stethoscope = ({
   return (
     <>
       <StethoscopeBox onPress={onPressAgendar}>
-        <Image source={DoctorImagem} />
+        <FontAwesome6 name="stethoscope" size={32} color="white" />
       </StethoscopeBox>
 
       <ModalAgendarConsulta
