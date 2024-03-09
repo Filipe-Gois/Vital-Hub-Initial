@@ -17,7 +17,7 @@ import DoctorRodrigo from "../../assets/doctorRodrigo.png";
 import DoctorCard from "../../components/DoctorCard";
 
 const SelectDoctorScreen = ({ navigation }) => {
-  const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const [selectedDoctor, setSelectedDoctor] = useState();
   const [doctors, setDoctors] = useState([
     {
       id: "1",
@@ -42,9 +42,9 @@ const SelectDoctorScreen = ({ navigation }) => {
     },
   ]);
 
-  const handleDoctorSelect = (doctorId) => {
-    setSelectedDoctor(doctorId);
-  };
+  // const handleDoctorSelect = (doctorId) => {
+  //   setSelectedDoctor(doctorId);
+  // };
 
   return (
     <Container>
@@ -59,8 +59,8 @@ const SelectDoctorScreen = ({ navigation }) => {
               scrollEnabled={false}
               renderItem={({ item }) => (
                 <DoctorCard
-                  isSelected={item.id === selectedDoctor}
-                  onSelect={() => handleDoctorSelect(item.id)}
+                  clickButton={item.id === selectedDoctor}
+                  onPress={() => setSelectedDoctor(item.id)}
                   dados={item}
                 />
               )}

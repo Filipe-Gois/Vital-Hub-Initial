@@ -12,6 +12,7 @@ export const ClinicCardStyle = styled.TouchableOpacity`
   background-color: ${Theme.colors.whiteColor};
   margin: 15px 0;
 
+  /* se a variavel "clickButton" for igual a true, aplicará a borda */
   ${(props) =>
     props.clickButton &&
     css`

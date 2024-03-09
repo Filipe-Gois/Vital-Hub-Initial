@@ -23,7 +23,7 @@ import { FontAwesome6 } from "@expo/vector-icons";
 import { WelComeImage } from "../../components/ImageProfile";
 
 const HomeScreen = ({ navigation }) => {
-  const [profile, setProfile] = useState("Paciente1");
+  const [profile, setProfile] = useState("Paciente");
 
   const [statusLista, setStatusLista] = useState("Pendente");
   const [agendarConsulta, setAgendarConsulta] = useState(false);

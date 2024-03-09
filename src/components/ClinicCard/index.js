@@ -5,9 +5,9 @@ import { Theme } from "../../themes";
 import { Hour } from "../CardConsulta";
 import { AntDesign } from "@expo/vector-icons";
 
-const ClinicCard = ({ dados = [], isSelected, onSelect }) => {
+const ClinicCard = ({ dados = [], onPress, clickButton }) => {
   return (
-    <ClinicCardStyle clickButton={isSelected} onPress={onSelect}>
+    <ClinicCardStyle clickButton={clickButton} onPress={onPress}>
       <ClinicCardRow>
         <TextCreateAccount1>{dados.name}</TextCreateAccount1>
         <ParagraphSemiBold color={Theme.colors.orangeColorV2}>

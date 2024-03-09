@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   FormBox,
@@ -14,7 +14,9 @@ import ClinicCard from "../../components/ClinicCard";
 import { FlatListStyle } from "../../components/FlatList/style";
 
 const SelectClinicScreen = ({ navigation }) => {
-  const [selectedClinic, setSelectedClinic] = useState(null);
+  //variável que armazena o id da clinica selecionada
+  const [selectedClinic, setSelectedClinic] = useState();
+
   const [clinics, setClinics] = useState([
     {
       id: "1",
@@ -49,10 +51,11 @@ const SelectClinicScreen = ({ navigation }) => {
       opening: "Seg-Sab",
     },
   ]);
+  useEffect(() => {
+    console.log(selectedClinic);
 
-  const handleClinicSelect = (clinicId) => {
-    setSelectedClinic(clinicId);
-  };
+    return (cleanUp = () => {});
+  }, [selectedClinic]);
 
   return (
     <Container>
@@ -69,8 +72,10 @@ const SelectClinicScreen = ({ navigation }) => {
               scrollEnabled={false}
               renderItem={({ item }) => (
                 <ClinicCard
-                  isSelected={item.id === selectedClinic}
-                  onSelect={() => handleClinicSelect(item.id)}
+                  //ao clicar no card da clinica, o id é capturado e passado p variavel que o armazenará
+                  onPress={() => setSelectedClinic(item.id)}
+                  //se o id armazenado no state "selectedClinic" for identico ao id do item atual do FlatList, será aplicada a borda, senão, seguirá para o proximo item, e por aí vai :)
+                  clickButton={selectedClinic === item.id}
                   dados={item}
                 />
               )}
