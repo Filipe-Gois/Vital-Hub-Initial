@@ -51,11 +51,6 @@ const SelectClinicScreen = ({ navigation }) => {
       opening: "Seg-Sab",
     },
   ]);
-  useEffect(() => {
-    console.log(selectedClinic);
-
-    return (cleanUp = () => {});
-  }, [selectedClinic]);
 
   return (
     <Container>
