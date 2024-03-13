@@ -26,8 +26,6 @@ const ClinicAddressScreen = ({ navigation }) => {
   return (
     <Container>
       <MainContent>
-
-
         <MapaGps />
 
         <ClinicAddress dados={clinic} />
