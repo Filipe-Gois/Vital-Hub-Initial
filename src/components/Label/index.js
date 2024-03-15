@@ -22,6 +22,7 @@ const Label = ({
   textColor,
   fieldTextAlign,
   isTitulo = true,
+  fieldMinHeight,
 }) => {
   return (
     <LabelStyle widthLabel={widthLabel} maxWidthLabel={maxWidthLabel}>
@@ -43,6 +44,7 @@ const Label = ({
         fieldMaxWidth={fieldMaxWidth}
         fieldPaddingBottom={fieldPaddingBottom}
         fieldTextAlign={fieldTextAlign}
+        fieldMinHeight={fieldMinHeight}
       />
     </LabelStyle>
   );

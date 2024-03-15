@@ -6,6 +6,11 @@ export const InputStyle = styled.TextInput.attrs((props) => ({
     ? props.placeholderTextColor
     : "#49B3BA",
 }))`
+  ${(props) =>
+    props.fieldMinHeight &&
+    css`
+      min-height: ${props.fieldMinHeight};
+    `}
   width: ${(props) => ` ${props.fieldWidth}%`};
   max-width: ${(props) => ` ${props.fieldMaxWidth}%`};
   height: ${(props) => ` ${props.fieldHeight}px`};

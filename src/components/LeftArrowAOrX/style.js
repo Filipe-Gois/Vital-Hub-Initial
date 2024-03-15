@@ -13,3 +13,15 @@ export const LeftArrowAndXStyle = styled.View`
   background-color: ${Theme.colors.lightGreen};
   z-index: 2;
 `;
+
+export const LeftArrowAndXStyleCamera = styled.TouchableOpacity`
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  top: 0px;
+  left: 0px;
+  width: auto;
+  height: auto;
+  position: relative;
+  background-color: ${Theme.colors.whiteColor};
+`;

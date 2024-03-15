@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const LabelStyle = styled.View`
   width: ${(props) => (props.widthLabel ? props.widthLabel : "100%")};

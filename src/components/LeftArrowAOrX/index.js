@@ -1,4 +1,5 @@
-import { LeftArrowAndXStyle } from "./style";
+import { Theme } from "../../themes";
+import { LeftArrowAndXStyle, LeftArrowAndXStyleCamera } from "./style";
 import { AntDesign } from "@expo/vector-icons"; //import para os ícones leftarrow e close X
 
 export const LeftArrowAOrXComponent = ({
@@ -20,5 +21,23 @@ export const LeftArrowAOrXComponent = ({
         color={color}
       />
     </LeftArrowAndXStyle>
+  );
+};
+
+export const LeftArrowAOrXCameraComponent = ({
+  size = 26,
+  color = Theme.colors.primary,
+  isLefArrow = true,
+  navigation,
+  onPress,
+}) => {
+  return (
+    <LeftArrowAndXStyleCamera onPress={onPress}>
+      <AntDesign
+        name={isLefArrow ? "arrowleft" : "close"}
+        size={size}
+        color={color}
+      />
+    </LeftArrowAndXStyleCamera>
   );
 };

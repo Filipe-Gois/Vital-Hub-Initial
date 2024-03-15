@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ButtonBox,
   Container,
@@ -18,8 +18,16 @@ import {
   TextCreateAccount2,
 } from "../../components/Paragraph/style";
 import { ButtonAqua } from "../../components/Button";
+import CameraComponent from "../../components/CameraComponent/CameraComponent";
 
 const ViewMRScreen = ({ navigation }) => {
+  const [cameraConfigs, setCameraConfigs] = useState({
+    showCameraModal: false,
+    uriCameraCapture: "",
+  });
+
+  const [showCamera, setShowCamera] = useState(false);
+  const [uriCamera, setUriCamera] = useState();
   return (
     <Container>
       <MainContentScroll>
@@ -77,7 +85,8 @@ const ViewMRScreen = ({ navigation }) => {
               //     "Medicamento: Advil Dosagem: 50 mg Frequência: 3 vezes ao dia Duração: 3 dias"
               //   }
               placeholder={"Nenhuma foto informada"}
-              fieldHeight={111}
+              fieldHeight={"100%"}
+              fieldMinHeight={"111px"}
               fieldTextAlign={"center"}
             />
 
@@ -85,7 +94,13 @@ const ViewMRScreen = ({ navigation }) => {
               fieldFlexDirection={"row"}
               fieldJustifyContent={"space-around"}
             >
-              <ButtonAqua />
+              <ButtonAqua
+                // onPress={() => {
+                //   setCameraConfigs({ ...cameraConfigs, showCameraModal: true });
+                //   console.log(cameraConfigs.showCameraModal);
+                // }}
+                onPress={() => setShowCamera(true)}
+              />
 
               <ButtonSecondary
                 fieldWidth={"50%"}
@@ -118,6 +133,15 @@ const ViewMRScreen = ({ navigation }) => {
             </ButtonSecondary>
           </FormBox>
         </MainContent>
+
+        <CameraComponent
+          visible={showCamera}
+          // setShowCameraModal={setCameraConfigs({
+          //   ...cameraConfigs,
+          //   showCameraModal,
+          // })}
+          setShowCameraModal={setShowCamera}
+        />
       </MainContentScroll>
     </Container>
   );

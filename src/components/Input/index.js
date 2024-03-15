@@ -22,9 +22,11 @@ export const Input = ({
   fieldPaddingBottom,
   textColor,
   fieldTextAlign,
+  fieldMinHeight,
 }) => {
   return (
     <InputStyle
+      fieldMinHeight={fieldMinHeight}
       fieldWidth={fieldWidth}
       textColor={textColor}
       fieldMaxWidth={fieldMaxWidth}

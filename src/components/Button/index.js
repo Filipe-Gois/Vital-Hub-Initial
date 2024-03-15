@@ -34,9 +34,9 @@ export const ButtonListAppontment = ({
   );
 };
 
-export const ButtonAqua = ({}) => {
+export const ButtonAqua = ({ onPress }) => {
   return (
-    <ButtonAquaStyle>
+    <ButtonAquaStyle onPress={onPress}>
       <MaterialIcons name="add-a-photo" size={20} color="white" />
       <ButtonTitle>Enviar</ButtonTitle>
     </ButtonAquaStyle>
