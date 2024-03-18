@@ -47,7 +47,7 @@ const CameraComponent = ({
       setPhoto(photo.uri);
       setOpenModal(openModal);
 
-      console.log(photo)
+      console.log(photo);
     }
   };
 

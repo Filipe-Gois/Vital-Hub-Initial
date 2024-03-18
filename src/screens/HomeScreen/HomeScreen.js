@@ -21,6 +21,7 @@ import { CardConsulta } from "../../components/CardConsulta";
 import Stethoscope from "../../components/stethoscope";
 import { FontAwesome6 } from "@expo/vector-icons";
 import { WelComeImage } from "../../components/ImageProfile";
+import { HandleCallNotification } from "../../components/Notification/Notification";
 
 const HomeScreen = ({ navigation }) => {
   const [profile, setProfile] = useState("Paciente");
@@ -211,8 +212,10 @@ const HomeScreen = ({ navigation }) => {
               textButton1={"Confirmar"}
               textButton2={"Cancelar"}
               // goBack={true}
-              navigation={navigation}
-              setNavigation="Main"
+              HandleModal={() => {
+                setShowModalCancel(false);
+                HandleCallNotification();
+              }}
             />
 
             <ModalComponent
@@ -232,7 +235,9 @@ const HomeScreen = ({ navigation }) => {
               textButton2={"Cancelar"}
               cancel={false}
               navigation={navigation}
-              setNavigation={profile === "Paciente" ? "ClinicAddress" : "MedicalRecord"}
+              setNavigation={
+                profile === "Paciente" ? "ClinicAddress" : "MedicalRecord"
+              }
             />
           </ContainerBoxStyle>
         </MainContent>

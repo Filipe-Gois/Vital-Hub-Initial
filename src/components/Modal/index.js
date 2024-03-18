@@ -38,7 +38,9 @@ export const ModalComponent = ({
   cancel = true,
   srcImage = "",
   setNavigation = "",
+  onPressNotification,
   navigation,
+  HandleModal,
 
   ...rest
 }) => {
@@ -46,6 +48,13 @@ export const ModalComponent = ({
     await setShowModalCancel(false);
     navigation.navigation(setNavigation);
   };
+
+  // const HandleModal = () => {
+  //   if (navigation) {
+  //     navigation.navigate(setNavigation);
+  //   }
+  //   onPressNotification;
+  // };
   return (
     <ModalStyle
       visible={visible}
@@ -66,7 +75,7 @@ export const ModalComponent = ({
           </ModalTextBox>
 
           <Button
-            onPress={() => navigation.navigate(setNavigation)}
+            onPress={HandleModal}
             // onPress={() =>setShowModalCancel(false)}
             padding={"0"}
           >
