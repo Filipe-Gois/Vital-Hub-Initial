@@ -46,7 +46,9 @@ export const ModalComponent = ({
 }) => {
   const handleClose = async () => {
     await setShowModalCancel(false);
-    navigation.navigation(setNavigation);
+    if (navigation) {
+      navigation.navigation(setNavigation);
+    }
   };
 
   // const HandleModal = () => {

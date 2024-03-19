@@ -13,7 +13,7 @@ Notifications.setNotificationHandler({
   }),
 });
 
-export const HandleCallNotification = async () => {
+export const HandleCallNotification = async ({ title, body, sound }) => {
   const { granted } = await Notifications.requestPermissionsAsync();
 
   if (!granted) {
@@ -23,8 +23,8 @@ export const HandleCallNotification = async () => {
 
   await Notifications.scheduleNotificationAsync({
     content: {
-      title: "Bem-vindo ao Senai!",
-      body: "Notificação recebida!",
+      title: title,
+      body: body,
     },
     trigger: null,
   });

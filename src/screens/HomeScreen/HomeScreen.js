@@ -214,7 +214,10 @@ const HomeScreen = ({ navigation }) => {
               // goBack={true}
               HandleModal={() => {
                 setShowModalCancel(false);
-                HandleCallNotification();
+                HandleCallNotification({
+                  body: "Notificação recebida!",
+                  title: "Bem-vindo ao Senai!",
+                });
               }}
             />
 
@@ -234,9 +237,10 @@ const HomeScreen = ({ navigation }) => {
               }
               textButton2={"Cancelar"}
               cancel={false}
-              navigation={navigation}
-              setNavigation={
-                profile === "Paciente" ? "ClinicAddress" : "MedicalRecord"
+              HandleModal={() =>
+                navigation.navigate(
+                  profile === "Paciente" ? "ClinicAddress" : "MedicalRecord"
+                )
               }
             />
           </ContainerBoxStyle>
